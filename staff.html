@@ -145,91 +145,49 @@
     }
 
     .card.is-active,
-    .card:hover {
-      opacity: 1;
-      flex-basis: 15% !important;
-    }
+.card:hover {
+  opacity: 1;
+  flex-basis: 30% !important;
+}
+
 
     .card:hover .card__info {
       opacity: 1;
       max-height: 200px;
     }
+    
 
-    .card:nth-child(2),
-    .card:nth-child(5),
-    .card:nth-child(9) {
-      margin-top: 0;
-    }
-
-    .card:nth-child(2),
-    .card:nth-child(4),
-    .card:nth-child(6),
-    .card:nth-child(8),
-    .card:nth-child(10) {
-      margin-top: 2.5%;
-    }
-
-    .card:nth-child(3),
-    .card:nth-child(7) {
-      margin-top: 5%;
-    }
-    #main-nav {
-  position: fixed;
-  top: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #0e0e25cc;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  z-index: 1000;
-  display: flex;
-  gap: 1rem;
+/* Card wave staggering */
+.card:nth-child(1),
+.card:nth-child(5),
+.card:nth-child(9),
+.card:nth-child(13),
+.card:nth-child(17) {
+  margin-top: 0;
 }
 
-#main-nav a {
-  color: #FF4ECD;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-nav {
-  background: var(--panel-bg);
-  backdrop-filter: blur(6px);
-  text-align: center;
-  padding: 1rem;
-  display: block;
+.card:nth-child(2),
+.card:nth-child(6),
+.card:nth-child(10),
+.card:nth-child(14),
+.card:nth-child(18) {
+  margin-top: 2.5%;
 }
 
-nav a {
-  display: inline-block;
-  margin: 0 0.5rem;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--neon-blue);
-  border: 1px solid #00FFF744;
-  border-radius: 999px;
-  background: var(--bg);
-  text-decoration: none;
-  box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
-  transition: all 0.3s ease;
-  cursor: pointer;
+.card:nth-child(3),
+.card:nth-child(7),
+.card:nth-child(11),
+.card:nth-child(15),
+.card:nth-child(19) {
+  margin-top: 5%;
 }
 
-nav a:hover {
-  color: #fff;
-  background: #FF4ECD11;
-  border-color: #FF4ECD88;
-  box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
-  text-shadow: 0 0 5px #FF4ECDaa;
-}
-
-nav a.active {
-  background: #FF4ECD22;
-  border-color: #FF4ECD;
-  color: #fff;
-  box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
-  text-shadow: 0 0 6px #FF4ECD;
+.card:nth-child(4),
+.card:nth-child(8),
+.card:nth-child(12),
+.card:nth-child(16),
+.card:nth-child(20) {
+  margin-top: 2.5%;
 }
 
 
@@ -237,24 +195,16 @@ nav a.active {
 </head>
 
 <body>
-  <nav id="main-nav">
-  <a href="index.html#home">Home</a>
-  <a href="staff.html#staff">Team & Services</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#menu">Menu</a>
-  <a href="index.html#apply">Apply Now!</a>
-</nav>
-
  <div class="container">
   <div class="card">
     <div class="card__inner">
       <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/61e94e76_original.jpg?v=cfa98e3c" alt="Kiera Virell"></picture>
     </div>
     <div class="card__info">
-      <h3>Kiera Virell</h3>
+      <h3>Kiera Virelle</h3>
       <p class="role">Owner</p>
       <p class="desc">Owner of Neon Neko and your favorite kind of trouble. Built for the wild ones—the bass chasers and strobe light lovers.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -266,7 +216,7 @@ nav a.active {
       <h3>Nilah Valoryn</h3>
       <p class="role">Owner</p>
       <p class="desc">Technomancer behind the scenes, Nilah makes the magic happen—plugins, pixels, and purrs.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -278,7 +228,7 @@ nav a.active {
       <h3>Sonja Golmarr</h3>
       <p class="role">GPOSER</p>
       <p class="desc">I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -290,7 +240,7 @@ nav a.active {
       <h3>Shinobu Hagane</h3>
       <p class="role">GPOSER</p>
       <p class="desc">Hair perfect, mood lethal. Shino captures glam like it’s prey.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -302,7 +252,7 @@ nav a.active {
       <h3>Yumiko Frost</h3>
       <p class="role">Blackjack Dealer</p>
       <p class="desc">Curl up or cash out, Yumiko’s table is cozy until she pounces.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -314,7 +264,7 @@ nav a.active {
       <h3>Solas Kurage</h3>
       <p class="role">Bartender</p>
       <p class="desc">Coming soon!</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -326,7 +276,7 @@ nav a.active {
       <h3>Morri Bloodmorr</h3>
       <p class="role">Dancer</p>
       <p class="desc">Coming soon!</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -338,19 +288,19 @@ nav a.active {
       <h3>Scarleta Valkyrie</h3>
       <p class="role">Person of interest</p>
       <p class="desc">Coming soon!</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
   <div class="card">
     <div class="card__inner">
-      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Amethyst Lucivarian"></picture>
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/fe0c2e08_original.jpg?v=990887f3" alt="Amethyst Lucivarian"></picture>
     </div>
     <div class="card__info">
       <h3>Amethyst Lucivarian</h3>
       <p class="role">Security</p>
       <p class="desc">CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster.</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
 
@@ -362,15 +312,50 @@ nav a.active {
       <h3>Naemona Anemone</h3>
       <p class="role">Dancer</p>
       <p class="desc">Coming soon!</p>
-      <a href="#" target="_blank">↗ Visit Profile</a>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
     </div>
   </div>
-  <div id="profile-panel">
-  <p class="staff-role"></p>
-  <p class="staff-desc"></p>
-  <a class="staff-link" href="#" target="_blank" style="display:none;">↗ Visit Profile</a>
-</div>
+   <div class="card">
+    <div class="card__inner">
+      <picture>
+        <img src="https://nilahmedia.uwu.ai/assets/images/gallery01/5508ec21_original.jpg?v=35bcb3de" alt="Kyoki Hagane">
+      </picture>
+    </div>
+    <div class="card__info">
+      <h3>Kyoki Hagane</h3>
+      <p class="role">Exists</p>
+      <p class="desc">Coming soon!</p>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
+    </div>
+  </div>
 
+  <div class="card">
+    <div class="card__inner">
+      <picture>
+        <img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Arin D'vere">
+      </picture>
+    </div>
+    <div class="card__info">
+      <h3>Arin D'vere</h3>
+      <p class="role">Dancer</p>
+      <p class="desc">Coming soon!</p>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> -->
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture>
+        <img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Danielle Racine">
+      </picture>
+    </div>
+    <div class="card__info">
+      <h3>Danielle Racine</h3>
+      <p class="role">Dancer</p>
+      <p class="desc">Coming soon!</p>
+      <!--<a href="#" target="_blank">↗ Visit Profile</a> --> 
+    </div>
+  </div>
 </div>
 
 
