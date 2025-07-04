@@ -728,16 +728,11 @@ e.target.reset();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const svgTailLink = document.getElementById("svgTailLink"); // Target the new SVG <a> tag
+  const svgTailLink = document.getElementById("svgTailLink");
   if (svgTailLink) {
     svgTailLink.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevent default link behavior if it's an SVG <a>
-      const nav = document.getElementById("main-nav");
-      nav.classList.add("visible");
-      const navLink = document.querySelector('nav a[href="#team"]');
-      if (navLink) {
-        showPage("team", navLink);
-      }
+      event.preventDefault();
+      window.location.href = "staff.html"; // Go directly to staff page
     });
   }
 });
