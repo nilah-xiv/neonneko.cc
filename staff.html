@@ -173,10 +173,78 @@
     .card:nth-child(7) {
       margin-top: 5%;
     }
+    #main-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0e0e25cc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  z-index: 1000;
+  display: flex;
+  gap: 1rem;
+}
+
+#main-nav a {
+  color: #FF4ECD;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+nav {
+  background: var(--panel-bg);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  padding: 1rem;
+  display: block;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neon-blue);
+  border: 1px solid #00FFF744;
+  border-radius: 999px;
+  background: var(--bg);
+  text-decoration: none;
+  box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #fff;
+  background: #FF4ECD11;
+  border-color: #FF4ECD88;
+  box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
+  text-shadow: 0 0 5px #FF4ECDaa;
+}
+
+nav a.active {
+  background: #FF4ECD22;
+  border-color: #FF4ECD;
+  color: #fff;
+  box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
+  text-shadow: 0 0 6px #FF4ECD;
+}
+
+
   </style>
 </head>
 
 <body>
+  <nav id="main-nav">
+  <a href="index.html#home">Home</a>
+  <a href="staff.html#staff">Team & Services</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#menu">Menu</a>
+  <a href="index.html#apply">Apply Now!</a>
+</nav>
+
  <div class="container">
   <div class="card">
     <div class="card__inner">

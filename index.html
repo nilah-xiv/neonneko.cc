@@ -315,7 +315,7 @@ window.addEventListener("hashchange", checkForTeamHash);
 <body>
 <nav id="main-nav">
 <a href="#home" onclick="showPage('home', this, event)">Home</a>
-<a href="staff">Staff + Services</a>
+<a href="staff.html">Team & Services</a>
 <a href="#about" onclick="showPage('about', this, event)">About</a>
 <a href="#menu" onclick="showPage('menu', this, event)">Menu</a>
 <a href="#apply" onclick="showPage('apply', this, event)">Apply Now!</a>
@@ -361,7 +361,7 @@ window.addEventListener("hashchange", checkForTeamHash);
       </style>
     </defs>
 
-    <a href="#team" class="svg-tail-link" id="svgTailLink">
+    <a href="staff.html" class="svg-tail-link" id="svgTailLink">
       <path id="mainTailPath" class="cls-2 pulsing-tail"
       d="M0,664.28c1.45-12.05,1.63-24.27,3.13-36.32,19.1-153.92,161.99-219.53,295.87-143.48,33.12,18.82,62.21,48.04,96.99,62.78,58.27,24.69,90.32-7.95,83.1-67.17-3.77-30.96-19.09-60.11-32.83-87.51.95-.95,7.98,5.42,9.01,6.45,62.56,63.13,51.71,162.14-18.66,214.13-96.96,71.63-169.14-40.99-258.7-56.48-68.19-11.79-116.65,24.14-155.35,75.73-7.81,10.42-14.47,21.86-22.56,31.86ZM459.24,568.39c-51.38,25.22-94.52-18.73-132.86-46.37-52.38-37.76-108.11-64-174.68-50.08-55.97,11.7-96.73,48.16-118.24,100.46-3.97,9.64-8.08,20.72-9.49,30.95,29.31-31.51,67.28-58.87,111.32-63.92,78.69-9.02,122.75,40.79,187.51,68.09,50.66,21.36,95.19,10,130.97-31.13.81-.93,6.19-7.33,5.47-8Z">
       </path>
@@ -796,6 +796,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   draw();
+
+  function showNavIfHash() {
+    const nav = document.getElementById("main-nav");
+    const showNavPages = ['#team', '#menu', '#apply', '#about', '#home']; // Include #home if needed
+    if (nav && showNavPages.includes(window.location.hash)) {
+      nav.classList.add("visible");
+    } else if (nav) {
+      nav.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("DOMContentLoaded", showNavIfHash);
+  window.addEventListener("hashchange", showNavIfHash);
+
 </script>
 
 </body>
