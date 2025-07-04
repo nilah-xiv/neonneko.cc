@@ -536,18 +536,18 @@ border: 1px solid var(--neon-blue);
 <script>
 const staffRoles = {
 "Kiera Virell": {
-title: "Co-owner",
+title: "Owner",
 about: "A chaos connoisseur and shout sorceress, Kiera keeps the night hyped and hearts loud.",
 image: "https://nilahmedia.uwu.ai/assets/images/gallery01/61e94e76_original.jpg?v=cfa98e3c"
 },
 "Nilah Valoryn": {
-title: "Co-owner",
+title: "Owner",
 about: "Technomancer behind the scenes, Nilah makes the magic happen - plugins, pixels, and purrs.",
 image: "https://nilahmedia.uwu.ai/assets/images/gallery01/e33ad9d5_original.jpg?v=cfa98e3c"
 },
 "Sonja Golmarr": {
 title: "GPOSER",
-about: "Bringing glam to life with every click. Sonja captures moments that meow forever.",
+about: "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too. Photography helps me hold onto the beauty most people miss, whether it's on the battlefield, in the city, or anywhere in between. After the fight, it's straight to the venue. Lights low, music loud. I’m on the dance floor, drink in hand, laughing with friends or vibing solo, like it's another kind of raid. Different battlefield, same thrill.",
 image: "https://nilahmedia.uwu.ai/assets/images/gallery01/21dcd0cc_original.jpg?v=dbc81ba0"
 },
 "Shinobu Hagane": {
@@ -569,7 +569,25 @@ image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?
 title: "Dancer",
 about: "Coming soon!",
 image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
+},
+
+"Scarleta Valkyrie": {
+title: "Person of interest",
+about: "Coming soon!",
+image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
+},
+"Amethyst Lucivarian": {
+title: "Security",
+about: "CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster. So good vibes only within the walls of this club :3 ",
+image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
+},
+
+"Naemona Anemone": {
+title: "Dancer",
+about: "Coming soon!",
+image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
 }
+
 
 };
 
@@ -585,7 +603,7 @@ function updateStaffDisplay(name) {
 const display = document.getElementById("staffDisplay");
 const staff = staffRoles[name];
 
-// If no staff member is selected (e.g., initial state), show default message
+// Intial State, Default is nothing selected.
 if (!staff) {
   display.innerHTML = `
     Select a Team Member<br>

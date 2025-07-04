@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Neko Staff Carousel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    
+
+.container::-webkit-scrollbar {
+  display: none;                  /* Chrome/Safari */
+    }
+
+    #profile-panel {
+  text-align: center;
+  color: #fff;
+  padding: 2rem 1rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#profile-panel h3 {
+  font-size: 1.4rem;
+  color: #FF4ECD;
+  margin: 0.25rem 0;
+}
+
+#profile-panel .staff-role {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #00FFF7;
+  margin-bottom: 0.5rem;
+}
+
+#profile-panel .staff-desc {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.75rem;
+}
+
+#profile-panel .staff-link {
+  font-size: 0.85rem;
+  color: #FF4ECD;
+  text-decoration: none;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0b0b1b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      max-width: 1440px;
+      padding: 0 3rem;
+      margin: 0 auto;
+      overflow: auto;
+      align-items: flex-start;
+      justify-content: center;
+      visibility: hidden;
+
+}
+
+    .card {
+      flex: 1 1 1%;
+      position: relative;
+      opacity: 0.2;
+      transition: flex 600ms cubic-bezier(0.25, 1, 0.5, 1), opacity 250ms ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card__inner {
+      margin: 0.25rem;
+      background: #111;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border: 2px solid #FF4ECD;
+      box-shadow: 0 0 10px #FF4ECD66;
+      width: 100%;
+    }
+
+    .card picture {
+      width: 100%;
+      height: 0;
+      padding-bottom: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card picture img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .card__info {
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 0.5s ease, max-height 0.5s ease;
+      text-align: center;
+      color: #fff;
+      padding: 1rem 0.5rem;
+      width: 100%;
+    }
+
+    .card__info h3 {
+      margin: 0.25rem 0;
+      font-size: 1.1rem;
+      color: #FF4ECD;
+    }
+
+    .card__info .role {
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #00FFF7;
+    }
+
+    .card__info .desc {
+      font-size: 0.85rem;
+      color: #ccc;
+      margin: 0.5rem 0;
+    }
+
+    .card__info a {
+      color: #FF4ECD;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .card.is-active,
+    .card:hover {
+      opacity: 1;
+      flex-basis: 15% !important;
+    }
+
+    .card:hover .card__info {
+      opacity: 1;
+      max-height: 200px;
+    }
+
+    .card:nth-child(2),
+    .card:nth-child(5),
+    .card:nth-child(9) {
+      margin-top: 0;
+    }
+
+    .card:nth-child(2),
+    .card:nth-child(4),
+    .card:nth-child(6),
+    .card:nth-child(8),
+    .card:nth-child(10) {
+      margin-top: 2.5%;
+    }
+
+    .card:nth-child(3),
+    .card:nth-child(7) {
+      margin-top: 5%;
+    }
+  </style>
+</head>
+
+<body>
+ <div class="container">
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/61e94e76_original.jpg?v=cfa98e3c" alt="Kiera Virell"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Kiera Virell</h3>
+      <p class="role">Owner</p>
+      <p class="desc">Owner of Neon Neko and your favorite kind of trouble. Built for the wild ones—the bass chasers and strobe light lovers.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/e33ad9d5_original.jpg?v=cfa98e3c" alt="Nilah Valoryn"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Nilah Valoryn</h3>
+      <p class="role">Owner</p>
+      <p class="desc">Technomancer behind the scenes, Nilah makes the magic happen—plugins, pixels, and purrs.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/21dcd0cc_original.jpg?v=dbc81ba0" alt="Sonja Golmarr"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Sonja Golmarr</h3>
+      <p class="role">GPOSER</p>
+      <p class="desc">I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/46a00881_original.jpg?v=a31692a1" alt="Shinobu Hagane"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Shinobu Hagane</h3>
+      <p class="role">GPOSER</p>
+      <p class="desc">Hair perfect, mood lethal. Shino captures glam like it’s prey.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/25f206e4_original.jpg?v=cfa98e3c" alt="Yumiko Frost"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Yumiko Frost</h3>
+      <p class="role">Blackjack Dealer</p>
+      <p class="desc">Curl up or cash out, Yumiko’s table is cozy until she pounces.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Solas Kurage"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Solas Kurage</h3>
+      <p class="role">Bartender</p>
+      <p class="desc">Coming soon!</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Morri Bloodmorr"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Morri Bloodmorr</h3>
+      <p class="role">Dancer</p>
+      <p class="desc">Coming soon!</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/4c6ca4b8_original.jpg?v=13929b6b" alt="Scarleta Valkyrie"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Scarleta Valkyrie</h3>
+      <p class="role">Person of interest</p>
+      <p class="desc">Coming soon!</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Amethyst Lucivarian"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Amethyst Lucivarian</h3>
+      <p class="role">Security</p>
+      <p class="desc">CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster.</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__inner">
+      <picture><img src="https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee" alt="Naemona Anemone"></picture>
+    </div>
+    <div class="card__info">
+      <h3>Naemona Anemone</h3>
+      <p class="role">Dancer</p>
+      <p class="desc">Coming soon!</p>
+      <a href="#" target="_blank">↗ Visit Profile</a>
+    </div>
+  </div>
+  <div id="profile-panel">
+  <p class="staff-role"></p>
+  <p class="staff-desc"></p>
+  <a class="staff-link" href="#" target="_blank" style="display:none;">↗ Visit Profile</a>
+</div>
+
+</div>
+
+
+
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => card.classList.add("is-active"));
+
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        cards.forEach(c => c.classList.remove("is-active"));
+        card.classList.add("is-active");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        cards.forEach(c => c.classList.add("is-active"));
+      });
+    });
+    window.addEventListener("load", () => {
+  document.querySelector('.container').style.visibility = 'visible';
+});
+
+  </script>
+</body>
+</html>
