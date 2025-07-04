@@ -300,12 +300,16 @@ border: 1px solid var(--neon-blue);
 }
 </style>
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    if (window.location.hash === "#team") {
-      window.location.replace("staff.html");
-    }
-  });
+function checkForTeamHash() {
+  if (window.location.hash === "#team") {
+    window.location.replace("staff.html");
+  }
+}
+
+window.addEventListener("DOMContentLoaded", checkForTeamHash);
+window.addEventListener("hashchange", checkForTeamHash);
 </script>
+
 
 </head>
 <body>
