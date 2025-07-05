@@ -190,6 +190,27 @@
 .card:nth-child(20) {
   margin-top: 2.5%;
 }
+
+.bubble-nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.bubble-nav .bubble {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--neon-blue, #00FFF7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bubble-nav .bubble.active {
+  background-color: var(--neon-blue, #00FFF7);
+}
+
     #main-nav {
   position: fixed;
   top: 1rem;
@@ -286,31 +307,52 @@ nav a.active {
 });
   </script>
 <script>
-fetch('staff.json')
-  .then(res => res.json())
-  .then(staffList => {
-    const container = document.querySelector('.container');
-    container.innerHTML = ''; // Clear any fallback content
+staffList.forEach(staff => {
+  const card = document.createElement('div');
+  card.className = 'card';
 
-    staffList.forEach(staff => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="card__inner">
-          <picture><img src="${staff.image}" alt="${staff.name}"></picture>
-        </div>
-        <div class="card__info">
-          <h3>${staff.name}</h3>
-          <p class="role">${staff.role}</p>
-          <p class="desc">${staff.desc}</p>
-        </div>
-      `;
-      container.appendChild(card);
+  // Ensure image array
+  const images = Array.isArray(staff.image) ? staff.image : [staff.image];
+
+  const picture = document.createElement('picture');
+  const img = document.createElement('img');
+  img.src = images[0];
+  img.alt = staff.name;
+  picture.appendChild(img);
+
+  const bubbles = document.createElement('div');
+  bubbles.className = 'bubble-nav';
+
+  images.forEach((imgSrc, index) => {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+    if (index === 0) bubble.classList.add('active');
+    bubble.addEventListener('click', () => {
+      img.src = imgSrc;
+      bubbles.querySelectorAll('.bubble').forEach(b => b.classList.remove('active'));
+      bubble.classList.add('active');
     });
-  })
-  .catch(err => {
-    console.error("Couldn't load staff.json:", err);
+    bubbles.appendChild(bubble);
   });
+
+  const inner = document.createElement('div');
+  inner.className = 'card__inner';
+  inner.appendChild(picture);
+  inner.appendChild(bubbles);
+
+  const info = document.createElement('div');
+  info.className = 'card__info';
+  info.innerHTML = `
+    <h3>${staff.name}</h3>
+    <p class="role">${staff.role}</p>
+    <p class="desc">${staff.desc}</p>
+  `;
+
+  card.appendChild(inner);
+  card.appendChild(info);
+  container.appendChild(card);
+});
+
 </script>
 
 </body>
