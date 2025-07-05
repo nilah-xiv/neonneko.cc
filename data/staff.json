@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Kiera Virelle",
+    "role": "Owner",
+    "desc": "Owner of Neon Neko and your favorite kind of trouble. Built for the wild ones—the bass chasers and strobe light lovers.",
+    "image": "images/Kiera.png"
+  },
+  {
+    "name": "Nilah Valoryn",
+    "role": "Owner",
+    "desc": "Technomancer behind the scenes, Nilah makes the magic happen—plugins, pixels, and purrs.",
+    "image": "images/Nilah.png"
+  },
+  {
+    "name": "Sonja Golmarr",
+    "role": "GPOSER",
+    "desc": "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too.",
+    "image": "images/Sonja.jpg"
+  },
+  {
+    "name": "Shinobu Hagane",
+    "role": "GPOSER",
+    "desc": "Hair perfect, mood lethal. Shino captures glam like it’s prey.",
+    "image": "images/Shino.png"
+  },
+  {
+    "name": "Yumiko Frost",
+    "role": "Blackjack Dealer",
+    "desc": "Curl up or cash out, Yumiko’s table is cozy until she pounces.",
+    "image": "images/Yumiko.png"
+  },
+  {
+    "name": "Solas Kurage",
+    "role": "Bartender",
+    "desc": "Coming soon!",
+    "image": "images/Solas.png"
+  },
+  {
+    "name": "Morri Bloodmorr",
+    "role": "Dancer",
+    "desc": "Coming soon!",
+    "image": "images/Morri.png"
+  },
+  {
+    "name": "Scarleta Valkyrie",
+    "role": "Person of interest",
+    "desc": "Coming soon!",
+    "image": "images/Scarletta.png"
+  },
+  {
+    "name": "Amethyst Lucivarian",
+    "role": "Security",
+    "desc": "CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster.",
+    "image": "images/Amethyst.png"
+  },
+  {
+    "name": "Naemona Anemone",
+    "role": "Dancer",
+    "desc": "Coming soon!",
+    "image": "images/template.png"
+  },
+  {
+    "name": "Kyoki Hagane",
+    "role": "Exists",
+    "desc": "Coming soon!",
+    "image": "images/Kyo.png"
+  },
+  {
+    "name": "Arin D'vere",
+    "role": "Dancer",
+    "desc": "Coming soon!",
+    "image": "images/Arin.png"
+  },
+  {
+    "name": "Danielle Racine",
+    "role": "Dancer",
+    "desc": "Coming soon!",
+    "image": "images/template.png"
+  }
+]
