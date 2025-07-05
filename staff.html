@@ -307,53 +307,79 @@ nav a.active {
 });
   </script>
 <script>
-staffList.forEach(staff => {
-  const card = document.createElement('div');
-  card.className = 'card';
+fetch('staff.json')
+  .then(res => res.json())
+  .then(staffList => {
+    const container = document.querySelector('.container');
+    container.innerHTML = ''; // Clear any fallback content
 
-  // Ensure image array
-  const images = Array.isArray(staff.image) ? staff.image : [staff.image];
+    staffList.forEach(staff => {
+      const card = document.createElement('div');
+      card.className = 'card';
 
-  const picture = document.createElement('picture');
-  const img = document.createElement('img');
-  img.src = images[0];
-  img.alt = staff.name;
-  picture.appendChild(img);
+      // Ensure image array
+      const images = Array.isArray(staff.image) ? staff.image : [staff.image];
 
-  const bubbles = document.createElement('div');
-  bubbles.className = 'bubble-nav';
+      const picture = document.createElement('picture');
+      const img = document.createElement('img');
+      img.src = images[0];
+      img.alt = staff.name;
+      picture.appendChild(img);
 
-  images.forEach((imgSrc, index) => {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
-    if (index === 0) bubble.classList.add('active');
-    bubble.addEventListener('click', () => {
-      img.src = imgSrc;
-      bubbles.querySelectorAll('.bubble').forEach(b => b.classList.remove('active'));
-      bubble.classList.add('active');
+      const bubbles = document.createElement('div');
+      bubbles.className = 'bubble-nav';
+
+      images.forEach((imgSrc, index) => {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        if (index === 0) bubble.classList.add('active');
+        bubble.addEventListener('click', () => {
+          img.src = imgSrc;
+          bubbles.querySelectorAll('.bubble').forEach(b => b.classList.remove('active'));
+          bubble.classList.add('active');
+        });
+        bubbles.appendChild(bubble);
+      });
+
+      const inner = document.createElement('div');
+      inner.className = 'card__inner';
+      inner.appendChild(picture);
+      inner.appendChild(bubbles);
+
+      const info = document.createElement('div');
+      info.className = 'card__info';
+      info.innerHTML = `
+        <h3>${staff.name}</h3>
+        <p class="role">${staff.role}</p>
+        <p class="desc">${staff.desc}</p>
+      `;
+
+      card.appendChild(inner);
+      card.appendChild(info);
+      container.appendChild(card);
     });
-    bubbles.appendChild(bubble);
+
+    // Reapply the hover logic after cards are added
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => card.classList.add("is-active"));
+
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        cards.forEach(c => c.classList.remove("is-active"));
+        card.classList.add("is-active");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        cards.forEach(c => c.classList.add("is-active"));
+      });
+    });
+  })
+  .catch(err => {
+    console.error("Couldn't load staff.json:", err);
   });
-
-  const inner = document.createElement('div');
-  inner.className = 'card__inner';
-  inner.appendChild(picture);
-  inner.appendChild(bubbles);
-
-  const info = document.createElement('div');
-  info.className = 'card__info';
-  info.innerHTML = `
-    <h3>${staff.name}</h3>
-    <p class="role">${staff.role}</p>
-    <p class="desc">${staff.desc}</p>
-  `;
-
-  card.appendChild(inner);
-  card.appendChild(info);
-  container.appendChild(card);
-});
-
 </script>
+
 
 </body>
 </html>
