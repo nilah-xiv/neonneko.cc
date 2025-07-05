@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venue Info | Neon Neko</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- assuming your CSS is external -->
+  <style>
+    /* Add here ONLY if this isn't included via external CSS */
+  </style>
+</head>
+<body>
+<nav id="main-nav">
+  <a href="index.html#home">Home</a>
+  <a href="staff.html" >Staff + Services</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#menu">Menu</a>
+  <a href="info.html"class="active">Info</a>
+  <a href="index.html#apply">Apply Now!</a>
+</nav>
+
+
+  <section class="page active" id="info">
+    <h1 class="title">Neon Neko Venue Info</h1>
+    <p class="subtext">Everything you need to know before stepping in</p>
+
+    <div class="glow-box">
+      <h2>📍 Location</h2>
+      <ul>
+        <li><strong>Server:</strong> Dynamis - Golem</li>
+        <li><strong>Ward:</strong> Shirogane, Ward 12</li>
+        <li><strong>Plot:</strong> #43</li>
+      </ul>
+    </div>
+
+    <div class="glow-box">
+      <h2>📶 Wi-Fi</h2>
+      <ul>
+        <li><strong>SSID:</strong>NeonNeko</li>
+        <li><strong>Password:</strong>NeonNekoPub</li>
+        <li>🧠 Please be respectful and avoid large downloads while connected.</li>
+      </ul>
+    </div>
+
+    <div class="glow-box">
+      <h2>💬 Join Our Discord</h2>
+      <p>Stay updated on events, hangouts, and exclusive giveaways!</p>
+      <a href="https://discord.gg/EZ7bTCFZ6v" class="button-link" target="_blank">Join the Server</a>
+    </div>
+
+    <div class="footer">© Neon Neko 2025 · Meow you later.</div>
+  </section>
+</body>
+</html>
+</script>
+  <canvas id="neonCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;"></canvas>
+
+<style>
+  body, html {
+    cursor: none !important;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById("neonCanvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  let trail = [];
+  const maxTrail = 20;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    trail.push({ x: mouse.x, y: mouse.y });
+    if (trail.length > maxTrail) trail.shift();
+
+    ctx.beginPath();
+    for (let i = 0; i < trail.length - 1; i++) {
+      const p1 = trail[i];
+      const p2 = trail[i + 1];
+      ctx.moveTo(p1.x, p1.y);
+      ctx.lineTo(p2.x, p2.y);
+    }
+
+    ctx.strokeStyle = "rgba(255, 0, 255, 0.8)";
+    ctx.lineWidth = 3;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+    ctx.shadowColor = "rgba(255, 0, 255, 1)";
+    ctx.shadowBlur = 15;
+    ctx.stroke();
+
+    requestAnimationFrame(draw);
+  }
+
+  document.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  draw();
+</script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.toLowerCase();
+    const hash = window.location.hash;
+
+    if (path.includes("index") || hash === "#home") document.querySelector('a[href="#home"]')?.classList.add("active");
+    if (path.includes("staff")) document.querySelector('a[href="staff.html"]')?.classList.add("active");
+    if (path.includes("info")) document.querySelector('a[href="info.html"]')?.classList.add("active");
+    if (hash === "#about") document.querySelector('a[href="#about"]')?.classList.add("active");
+    if (hash === "#menu") document.querySelector('a[href="#menu"]')?.classList.add("active");
+    if (hash === "#apply") document.querySelector('a[href="#apply"]')?.classList.add("active");
+  });
+</script>
