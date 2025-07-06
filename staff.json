@@ -57,11 +57,7 @@
     "name": "Naemona Anemone",
     "role": "Dancer",
     "desc": "Coming soon!",
-    "image": [
-      "images/naemona1.png",
-      "images/naemona2.png",
-      "images/naemona3.png"
-    ]
+    "image": "images/naemona1.png"
   },
   {
     "name": "Kyoki Hagane",
