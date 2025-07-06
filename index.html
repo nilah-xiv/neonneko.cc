@@ -5,17 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Neon Neko</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
 <style>
-:root {
---neon-pink: #FF4ECD;
---neon-blue: #00FFF7;
---bg: #0B0B1B;
---panel-bg: #0E0E25cc;
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
 }
-#wrapper, #main, .inner {
-all: unset;
-display: contents !important;
+
+#main-nav {
+  background: var(--panel-bg);
+  backdrop-filter: blur(6px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  box-shadow: 0 0 10px #00FFF722;
+  position: relative;
+  z-index: 100;
 }
+
+#main-nav a {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neon-blue);
+  border: 1px solid #00FFF744;
+  border-radius: 999px;
+  background: var(--bg);
+  text-decoration: none;
+  box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#main-nav a:hover {
+  color: #fff;
+  background: #FF4ECD11;
+  border-color: #FF4ECD88;
+  box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
+  text-shadow: 0 0 5px #FF4ECDaa;
+}
+
+#main-nav a.active {
+  background: #FF4ECD22;
+  border-color: #FF4ECD;
+  color: #fff;
+  box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
+  text-shadow: 0 0 6px #FF4ECD;
+}
+
+    
 .menu-item.wide {
 grid-column: 1 / -1;
 flex-direction: row;
@@ -58,80 +102,6 @@ font-size: 1.4rem;
   font-weight: bold;
 }
 
-.staff-display {
-border: 2px solid var(--neon-blue);
-border-radius: 16px;
-padding: 2rem;
-min-height: 240px;
-width: 400px;
-text-align: center;
-color: white;
-box-shadow: 0 0 15px #00FFF733;
-margin-bottom: 1rem;
-transition: all 0.3s ease;
-}
-
-.staff-nav {
-display: flex;
-align-items: center;
-gap: 2rem;
-margin-bottom: 2rem;
-}
-
-.staff-arrow {
-font-size: 2rem;
-color: var(--neon-pink);
-cursor: pointer;
-transition: transform 0.2s ease;
-}
-
-.staff-arrow:hover {
-transform: scale(1.2);
-}
-
-.staff-buttons {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 1rem;
-}
-
-.staff-button {
-padding: 0.75rem 1.5rem;
-border: 2px solid var(--neon-pink);
-background: transparent;
-color: white;
-font-weight: 600;
-border-radius: 12px;
-cursor: pointer;
-transition: all 0.2s ease;
-min-width: 90px;
-text-align: center;
-}
-
-.staff-button:hover {
-background: var(--neon-pink);
-color: black;
-}
-
-body {
-background: var(--bg);
-color: #EAEAEA;
-font-family: 'Outfit', sans-serif;
-}
-
-nav {
-background: var(--panel-bg);
-backdrop-filter: blur(6px);
-text-align: center;
-padding: 1rem;
-display: none; /* Hidden by default */
-transition: opacity 0.5s ease; /* For smooth reveal */
-}
-
-nav.visible {
-display: block; /* Shown when 'visible' class is added */
-}
 #home svg {
   width: 100%;
   max-width: 600px;
@@ -141,53 +111,6 @@ display: block; /* Shown when 'visible' class is added */
 }
 
 
-
-nav a {
-display: inline-block;
-margin: 0 0.5rem;
-padding: 0.5rem 1.2rem;
-font-size: 0.95rem;
-font-weight: 500;
-color: var(--neon-blue);
-border: 1px solid #00FFF744;
-border-radius: 999px;
-background: var(--bg);
-text-decoration: none;
-box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
-transition: all 0.3s ease;
-cursor: pointer;
-}
-
-nav a:hover {
-color: #fff;
-background: #FF4ECD11;
-border-color: #FF4ECD88;
-box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
-text-shadow: 0 0 5px #FF4ECDaa;
-}
-
-nav a.active {
-background: #FF4ECD22;
-border-color: #FF4ECD;
-color: #fff;
-box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
-text-shadow: 0 0 6px #FF4ECD;
-}
-
-.page {
-display: none;
-opacity: 0;
-transition: opacity 0.4s ease;
-padding: 3rem 1.5rem;
-text-align: center;
-max-width: 960px;
-margin: 0 auto;
-}
-
-.page.active {
-display: block;
-opacity: 1; /* Ensure active page is fully opaque */
-}
 
 .title {
 font-size: 3.5rem;
@@ -249,7 +172,7 @@ background: var(--neon-pink);
 color: #fff;
 box-shadow: 0 0 10px #FF4ECD88;
 }
-html, body {
+html{
 margin: 0;
 padding: 0;
 overflow-x: hidden;
@@ -257,9 +180,7 @@ height: 100%;
 overscroll-behavior: none;
 }
 
-body {
-overflow-y: auto;
-}
+
 .footer {
 font-size: 0.9rem;
 opacity: 0.5;
@@ -313,13 +234,16 @@ window.addEventListener("hashchange", checkForTeamHash);
 
 </head>
 <body>
-<nav id="main-nav">
-<a href="#home" onclick="showPage('home', this, event)">Home</a>
-<a href="staff.html">Team & Services</a>
-<a href="#about" onclick="showPage('about', this, event)">About</a>
-<a href="#menu" onclick="showPage('menu', this, event)">Menu</a>
-<a href="#apply" onclick="showPage('apply', this, event)">Apply Now!</a>
-</nav>
+  <div class="nav-wrapper">
+  <nav id="main-nav">
+    <a href="home" onclick="showPage('home', this, event)">Home</a>
+    <a href="info.html">Venue Details</a>
+    <a href="staff.html">Team & Services</a>
+    <a href="#menu" onclick="showPage('menu', this, event)">Menu</a>
+    <a href="#apply" onclick="showPage('apply', this, event)">Apply Now!</a>
+  </nav>
+</div>
+
 
 <div id="home" class="page active">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496.41 664.28" style="overflow: visible; display: block;">
@@ -354,7 +278,7 @@ window.addEventListener("hashchange", checkForTeamHash);
           pointer-events: none;
         }
 
-        /* Use a class on the SVG <a> tag for hover effects */
+        
         .svg-tail-link:hover .hover-text-in-tail {
           fill: #ffffff;
         }
@@ -400,37 +324,11 @@ window.addEventListener("hashchange", checkForTeamHash);
         d="M260.57,359.61c15.79-15.99,31.04-32.58,45.98-49.39,3.61-2.92,10.47-1.05,14.92-1.55l-38.97,44.45,40.98,51.93c.02.74-12.12,1.13-13.54-.43l-34.99-42.97c-.96-.21-14.37,12.46-14.37,13.44v30.47h-10.98v-96.89c2,.14,10.98-.79,10.98,1.5v49.45Z">
       </path>
       <path id="textArc" d="M 160 540 Q 200 470 330 575" fill="none"></path>
-      <text class="hover-text-in-tail pulsing-text" font-size="18">
-        <textPath href="#textArc" startOffset="50%">Follow the tail...</textPath>
-      </text>
     </a>
   </svg>
   <div class="subtext">Glowing Wild, Purring Louder</div>
 </div>
 
-<div id="team" class="page">
-  <h2>Our Team</h2>
-  <div class="staff-container">
-    <div class="staff-nav">
-      <div class="staff-arrow" onclick="prevStaff()">←</div>
-      <div id="staffDisplay" class="staff-display">
-        Select a Team Member<br>
-        Their role will appear here.<br>
-        Click a card below to view details.
-      </div>
-      <div class="staff-arrow" onclick="nextStaff()">→</div>
-    </div>
-    <div class="staff-buttons">
-      <div class="staff-button" onclick="setStaff('Kiera Virell')">Kiera Virell</div>
-      <div class="staff-button" onclick="setStaff('Nilah Valoryn')">Nilah Valoryn</div>
-      <div class="staff-button" onclick="setStaff('Sonja Golmarr')">Sonja Golmarr</div>
-      <div class="staff-button" onclick="setStaff('Shinobu Hagane')">Shinobu Hagane</div>
-      <div class="staff-button" onclick="setStaff('Yumiko Frost')">Yumiko Frost</div>
-      <div class="staff-button" onclick="setStaff('Solas Kurage')">Solas Kurage</div>
-      <div class="staff-button" onclick="setStaff('Morri Bloodmorr')">Morri Bloodmorr</div>
-    </div>
-  </div>
-</div>
 
 <div id="about" class="page">
   <h2>About Neon Neko</h2>
@@ -544,117 +442,7 @@ window.addEventListener("hashchange", checkForTeamHash);
 <div id="applicationStatus" style="margin-top: 1rem; color: var(--neon-blue);"></div>
 </form>
 </div>
-
 <script>
-const staffRoles = {
-"Kiera Virell": {
-title: "Owner",
-about: "A chaos connoisseur and shout sorceress, Kiera keeps the night hyped and hearts loud.",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/61e94e76_original.jpg?v=cfa98e3c"
-},
-"Nilah Valoryn": {
-title: "Owner",
-about: "Technomancer behind the scenes, Nilah makes the magic happen - plugins, pixels, and purrs.",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/e33ad9d5_original.jpg?v=cfa98e3c"
-},
-"Sonja Golmarr": {
-title: "GPOSER",
-about: "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too. Photography helps me hold onto the beauty most people miss, whether it's on the battlefield, in the city, or anywhere in between. After the fight, it's straight to the venue. Lights low, music loud. I’m on the dance floor, drink in hand, laughing with friends or vibing solo, like it's another kind of raid. Different battlefield, same thrill.",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/21dcd0cc_original.jpg?v=dbc81ba0"
-},
-"Shinobu Hagane": {
-title: "GPOSER",
-about: "Hair perfect, mood lethal. Shino captures glam like it’s prey.",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/46a00881_original.jpg?v=a31692a1"
-},
-"Yumiko Frost": {
-title: "Blackjack Dealer",
-about: "Curl up or cash out, Yumiko’s table is cozy until she pounces.",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/25f206e4_original.jpg?v=cfa98e3c"
-},
-"Solas Kurage": {
-title: "Bartender",
-about: "Coming soon!",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
-},
-"Morri Bloodmorr": {
-title: "Dancer",
-about: "Coming soon!",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
-},
-
-"Scarleta Valkyrie": {
-title: "Person of interest",
-about: "Coming soon!",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
-},
-"Amethyst Lucivarian": {
-title: "Security",
-about: "CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster. So good vibes only within the walls of this club :3 ",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
-},
-
-"Naemona Anemone": {
-title: "Dancer",
-about: "Coming soon!",
-image: "https://nilahmedia.uwu.ai/assets/images/gallery01/2d7009b1_original.png?v=f6a5c7ee"
-}
-
-
-};
-
-const staffList = Object.keys(staffRoles);
-let currentStaffIndex = -1;
-
-function setStaff(name) {
-currentStaffIndex = staffList.indexOf(name);
-updateStaffDisplay(name);
-}
-
-function updateStaffDisplay(name) {
-const display = document.getElementById("staffDisplay");
-const staff = staffRoles[name];
-
-// Intial State, Default is nothing selected.
-if (!staff) {
-  display.innerHTML = `
-    Select a Team Member<br>
-    Their role will appear here.<br>
-    Click a card below to view details.
-  `;
-  return;
-}
-
-const imgHTML = staff.image
-? `<img src="${staff.image}" alt="${name}" style="width: 256px; height: 256px; object-fit: cover; border-radius: 12px; border: 2px solid var(--neon-pink); margin-bottom: 1rem;">`
-: "";
-
-display.innerHTML = `
-${imgHTML}
-<div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.3rem;">${name}</div>
-<div style="font-size: 1rem; color: var(--neon-blue); margin-bottom: 1rem;">${staff.title}</div>
-<div style="font-size: 0.95rem; line-height: 1.4; opacity: 0.9; max-width: 320px; margin: 0 auto;">${staff.about}</div>
-`;
-}
-
-function nextStaff() {
-if (currentStaffIndex === -1) { // If no staff selected, start from the first
-  currentStaffIndex = 0;
-} else {
-  currentStaffIndex = (currentStaffIndex + 1) % staffList.length;
-}
-updateStaffDisplay(staffList[currentStaffIndex]);
-}
-
-function prevStaff() {
-if (currentStaffIndex === -1) { // If no staff selected, start from the last
-  currentStaffIndex = staffList.length - 1;
-} else {
-  currentStaffIndex = (currentStaffIndex - 1 + staffList.length) % staffList.length;
-}
-updateStaffDisplay(staffList[currentStaffIndex]);
-}
-
 function revealNavAndGoToTeam() {
   const nav = document.getElementById('main-nav');
   nav.classList.add('visible'); // Show the nav

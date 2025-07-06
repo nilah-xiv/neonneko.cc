@@ -5,21 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Venue Info | Neon Neko</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- assuming your CSS is external -->
+  <link rel="stylesheet" href="style.css">
   <style>
+    .nav-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#main-nav {
+  background: var(--panel-bg);
+  backdrop-filter: blur(6px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  box-shadow: 0 0 10px #00FFF722;
+  position: relative;
+  z-index: 100;
+}
+
+#main-nav a {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--neon-blue);
+  border: 1px solid #00FFF744;
+  border-radius: 999px;
+  background: var(--bg);
+  text-decoration: none;
+  box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#main-nav a:hover {
+  color: #fff;
+  background: #FF4ECD11;
+  border-color: #FF4ECD88;
+  box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
+  text-shadow: 0 0 5px #FF4ECDaa;
+}
+
+#main-nav a.active {
+  background: #FF4ECD22;
+  border-color: #FF4ECD;
+  color: #fff;
+  box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
+  text-shadow: 0 0 6px #FF4ECD;
+}
     /* Add here ONLY if this isn't included via external CSS */
   </style>
 </head>
 <body>
-<nav id="main-nav">
-  <a href="index.html#home">Home</a>
-  <a href="staff.html" >Staff + Services</a>
-  <a href="index.html#about">About</a>
-  <a href="index.html#menu">Menu</a>
-  <a href="info.html"class="active">Info</a>
-  <a href="index.html#apply">Apply Now!</a>
-</nav>
-
+<div class="nav-wrapper">
+  <nav id="main-nav">
+    <a href="index.html#home">Home</a>
+    <a href="info.html" class="active">Venue Details</a>
+    <a href="staff.html#staff">Team & Services</a>
+    <a href="index.html#menu">Menu</a>
+    <a href="index.html#apply">Apply Now!</a>
+  </nav>
+</div>
 
   <section class="page active" id="info">
     <h1 class="title">Neon Neko Venue Info</h1>
