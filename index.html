@@ -478,9 +478,8 @@ newPage.style.opacity = 1;
 });
 }, 200);
 
-// If navigating to the team page, ensure the initial display is set
 if (id === 'team' && currentStaffIndex === -1 && staffList.length > 0) {
-  updateStaffDisplay(null); // Call with null to show the default message
+  updateStaffDisplay(null); 
 }
 }
 
@@ -490,7 +489,7 @@ if (hash && document.getElementById(hash)) {
 const navLink = document.querySelector(`nav a[onclick*="${hash}"]`);
 showPage(hash, navLink);
 } else {
-  // If no hash, or hash doesn't exist, show the home page by default
+
   showPage('home', document.querySelector('nav a[href="#home"]'));
 }
 });
@@ -520,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (svgTailLink) {
     svgTailLink.addEventListener("click", (event) => {
       event.preventDefault();
-      window.location.href = "staff.html"; // Go directly to staff page
+      window.location.href = "staff.html"; 
     });
   }
 });
@@ -582,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showNavIfHash() {
     const nav = document.getElementById("main-nav");
-    const showNavPages = ['#team', '#menu', '#apply', '#about', '#home']; // Include #home if needed
+    const showNavPages = ['#team', '#menu', '#apply', '#about', '#home']; 
     if (nav && showNavPages.includes(window.location.hash)) {
       nav.classList.add("visible");
     } else if (nav) {

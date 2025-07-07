@@ -206,7 +206,7 @@
     .card.is-active,
 .card:hover {
   opacity: 1;
-  flex-basis: 30% !important; /* or 35–40% depending on spacing */
+  flex-basis: 30% !important; 
 }
 
     .card:hover .card__info {
@@ -438,7 +438,6 @@
 </head>
 
 <body>
-  <!-- MODAL (must be inside <body>) -->
 <div id="staffModal" class="modal hidden">
   <div class="modal-content">
     <span class="close-button">&times;</span>
@@ -581,8 +580,6 @@ fetch('staff.json')
 
       container.appendChild(card);
     });
-
-    // After all cards are added
     document.querySelector('.container').style.visibility = 'visible';
     const cards = document.querySelectorAll(".card");
 
