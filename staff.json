@@ -51,7 +51,12 @@
     "name": "Amethyst Lucivarian",
     "role": "Security",
     "desc": "CyberFox Security & DJ of Neon Neko. I'll spin them fast beats but spin you out faster.",
-    "image": "images/Amethyst.png"
+    "image": [
+    "images/Amethyst.png",
+    "images/Amethyst2.png"
+
+  ]
+   
   },
   {
   "name": "Naemona Anemone",
