@@ -54,11 +54,15 @@
     "image": "images/Amethyst.png"
   },
   {
-    "name": "Naemona Anemone",
-    "role": "Dancer",
-    "desc": "Coming soon!",
-    "image": "images/naemona1.png"
-  },
+  "name": "Naemona Anemone",
+  "role": "Dancer",
+  "desc": "Coming soon!",
+  "image": [
+    "images/naemona1.png",
+    "images/naemona2.png",
+    "images/naemona3.png"
+  ]
+},
   {
     "name": "Kyoki Hagane",
     "role": "Exists",

@@ -7,10 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    .clickable {
+  cursor: pointer;
+}
  .nav-wrapper {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
+}
+.card {
+  cursor: pointer;
 }
 
 #main-nav {
@@ -246,11 +252,210 @@
   justify-content: center;
   padding-top: 2rem;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 11, 27, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+  transition: opacity 0.3s ease;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--panel-bg);
+  border: 2px solid var(--neon-pink);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 90%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 20px var(--neon-pink);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+  color: var(--neon-pink);
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.modal-role {
+  color: var(--neon-blue);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal-desc {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(11, 11, 27, 0.95);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999;
+      backdrop-filter: blur(6px);
+      transition: opacity 0.3s ease;
+    }
+
+    .modal.hidden { display: none; }
+
+    .modal-content {
+      background: var(--panel-bg);
+      border: 2px solid var(--neon-pink);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 90%;
+      max-width: 480px;
+      text-align: center;
+      box-shadow: 0 0 20px var(--neon-pink);
+      position: relative;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content h3 {
+      color: var(--neon-pink);
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .modal-role {
+      color: var(--neon-blue);
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .modal-desc {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel-controls button {
+      padding: 0.5rem 1rem;
+      background: var(--neon-pink);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .carousel-controls button:hover {
+      background: var(--neon-blue);
+    }
+    .fade-image {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.fade-image.show {
+  opacity: 1;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #444;
+  transition: background 0.3s ease;
+}
+
+.dots span.active {
+  background: var(--neon-pink);
+  box-shadow: 0 0 5px var(--neon-pink);
+}
 
   </style>
 </head>
 
 <body>
+  <!-- MODAL (must be inside <body>) -->
+<div id="staffModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <img id="modalImage" src="" alt="" class="fade-image">
+    
+    <div class="carousel-controls">
+      <button id="prevBtn">&#8592;</button>
+      <div id="carouselDots" class="dots"></div>
+      <button id="nextBtn">&#8594;</button>
+    </div>
+
+    <h3 id="modalName"></h3>
+    <p class="modal-role" id="modalRole"></p>
+    <p class="modal-desc" id="modalDesc"></p>
+  </div>
+</div>
+
 <div class="nav-wrapper">
   <nav id="main-nav">
     <a href="index.html#home">Home</a>
@@ -280,27 +485,134 @@
   document.querySelector('.container').style.visibility = 'visible';
 });
   </script>
+
 <script>
 fetch('staff.json')
   .then(res => res.json())
   .then(staffList => {
     const container = document.querySelector('.container');
-    container.innerHTML = ''; // Clear any fallback content
+    container.innerHTML = '';
+
+    const modal = document.getElementById('staffModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalName = document.getElementById('modalName');
+    const modalRole = document.getElementById('modalRole');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.querySelector('.close-button');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+ modalImage.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    modalImage.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
+
+    let modalImages = [];
+    let currentImageIndex = 0;
+    let currentStaff = null;
+
+    function updateModalContent() {
+      modalImage.classList.remove("show");
+
+      setTimeout(() => {
+        modalImage.src = modalImages[currentImageIndex];
+        modalImage.classList.add("show");
+
+        modalName.textContent = currentStaff.name;
+        modalRole.textContent = currentStaff.role;
+        modalDesc.textContent = currentStaff.desc;
+
+        const dotEls = document.querySelectorAll('#carouselDots span');
+        dotEls.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentImageIndex);
+        });
+      }, 100);
+    }
 
     staffList.forEach(staff => {
       const card = document.createElement('div');
       card.className = 'card';
-      card.innerHTML = `
-        <div class="card__inner">
-          <picture><img src="${staff.image}" alt="${staff.name}"></picture>
-        </div>
-        <div class="card__info">
-          <h3>${staff.name}</h3>
-          <p class="role">${staff.role}</p>
-          <p class="desc">${staff.desc}</p>
-        </div>
+
+      const images = Array.isArray(staff.image) ? staff.image : [staff.image];
+
+      const picture = document.createElement('picture');
+      const img = document.createElement('img');
+      img.src = images[0];
+      img.alt = staff.name;
+      picture.appendChild(img);
+
+      const inner = document.createElement('div');
+      inner.className = 'card__inner';
+      inner.appendChild(picture);
+
+      const info = document.createElement('div');
+      info.className = 'card__info';
+      info.innerHTML = `
+        <h3>${staff.name}</h3>
+        <p class="role">${staff.role}</p>
+        <p class="desc">${staff.desc}</p>
       `;
+
+      card.appendChild(inner);
+      card.appendChild(info);
+
+      card.addEventListener('click', () => {
+        currentStaff = staff;
+        modalImages = Array.isArray(staff.image) ? staff.image : [staff.image];
+        currentImageIndex = 0;
+
+        const dotContainer = document.getElementById("carouselDots");
+        dotContainer.innerHTML = "";
+        modalImages.forEach((_, i) => {
+          const dot = document.createElement("span");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            currentImageIndex = i;
+            updateModalContent();
+          });
+          dotContainer.appendChild(dot);
+        });
+
+        updateModalContent();
+        modal.classList.remove('hidden');
+      });
+
       container.appendChild(card);
+    });
+
+    // After all cards are added
+    document.querySelector('.container').style.visibility = 'visible';
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => card.classList.add("is-active"));
+    cards.forEach(card => {
+      card.addEventListener("mouseenter", () => {
+        cards.forEach(c => c.classList.remove("is-active"));
+        card.classList.add("is-active");
+      });
+      card.addEventListener("mouseleave", () => {
+        cards.forEach(c => c.classList.add("is-active"));
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.add('hidden');
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + modalImages.length) % modalImages.length;
+      updateModalContent();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % modalImages.length;
+      updateModalContent();
     });
   })
   .catch(err => {
