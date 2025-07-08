@@ -76,7 +76,11 @@
     "name": "Arin D'vere",
     "role": "Dancer",
     "desc": "Hi everyone, I’m Arin! Dancer, entertainer, chitchat fanatic, and expert procrastinator. Whoever’s reading this, I’d love to get to know you better—and in return, I promise I’ll make your night a little more brighter!",
-    "image": "images/Arin.png"
+    "image": [
+    "images/Arin.png",
+    "images/arin2.png",
+    "images/arin3.png"
+  ]
   },
   {
     "name": "Danielle Racine",
