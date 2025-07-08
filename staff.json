@@ -38,13 +38,13 @@
   {
     "name": "Morri Bloodmorr",
     "role": "Dancer",
-    "desc": "Coming soon!",
+    "desc": "A Succipuss of the 2nd Circle of Hell. For decades and decades Morri has hunted and roamed, but they're going incognito no shape of their own. Sometimes they're the Neon Neko's dancer and rather well known. Sometimes they're a whisper on your nights alone. If you are in need of sympathy on your throne. Beware the Morri they will feast on your bones.",
     "image": "images/Morri.png"
   },
   {
     "name": "Scarleta Valkyrie",
     "role": "Person of interest",
-    "desc": "Coming soon!",
+    "desc": "Im a busy bunny that like to do things! If im not busy im not doing anything! Feeding the addiction of never having enough things to do",
     "image": "images/Scarletta.png"
   },
   {
@@ -54,9 +54,7 @@
     "image": [
     "images/Amethyst.png",
     "images/Amethyst2.png"
-
   ]
-   
   },
   {
   "name": "Naemona Anemone",
@@ -71,19 +69,25 @@
   {
     "name": "Kyoki Hagane",
     "role": "Exists",
-    "desc": "Coming soon!",
+    "desc": "An upcoming DJ",
     "image": "images/Kyo.png"
   },
   {
     "name": "Arin D'vere",
     "role": "Dancer",
-    "desc": "Coming soon!",
+    "desc": "Hi everyone, I’m Arin! Dancer, entertainer, chitchat fanatic, and expert procrastinator. Whoever’s reading this, I’d love to get to know you better—and in return, I promise I’ll make your night a little more brighter!",
     "image": "images/Arin.png"
   },
   {
     "name": "Danielle Racine",
     "role": "Dancer",
-    "desc": "Coming soon!",
+    "desc": "Hi out to everyone!  I just your normal transgirl who loves to pose, talk and from time to time flirt. (If from time to time means most of the time)  I love meeting new people and understanding what really makes them tick, and then if I use that information to my advantage then what's the harm right?",
     "image": "images/Danielle.png"
+  },
+  {
+    "name": "Alys Noxhart",
+    "role": "Bartender",
+    "desc": "Need a drink?  Let me make you one and more while joining your journey of drunkenness. If not drinking and making them for patrons, I love to move to the music and enjoy the sweet flavors of information that passes in the shadows. Give me something just as sweet and you'll be given a reward.",
+    "image": "template.png"
   }
 ]
