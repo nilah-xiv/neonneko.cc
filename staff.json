@@ -88,6 +88,9 @@
     "name": "Alys Noxhart",
     "role": "Bartender",
     "desc": "Need a drink?  Let me make you one and more while joining your journey of drunkenness. If not drinking and making them for patrons, I love to move to the music and enjoy the sweet flavors of information that passes in the shadows. Give me something just as sweet and you'll be given a reward.",
-    "image": "template.png"
+    "image": [
+    "images/alys1.png",
+    "images/alys2.png"
+  ]
   }
 ]
