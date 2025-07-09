@@ -39,7 +39,12 @@
     "name": "Morri Bloodmorr",
     "role": "Dancer",
     "desc": "A Succipuss of the 2nd Circle of Hell. For decades and decades Morri has hunted and roamed, but they're going incognito no shape of their own. Sometimes they're the Neon Neko's dancer and rather well known. Sometimes they're a whisper on your nights alone. If you are in need of sympathy on your throne. Beware the Morri they will feast on your bones.",
-    "image": "images/Morri.png"
+    "image": [
+    "images/Morri2.png",
+    "images/Morri.png",
+    "images/Morri1.png",
+    "images/Morri3.png"
+  ]
   },
   {
     "name": "Scarleta Valkyrie",
