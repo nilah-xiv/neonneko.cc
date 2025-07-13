@@ -15,7 +15,11 @@
     "name": "Sonja Golmarr",
     "role": "GPOSER",
     "desc": "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I’ve got an eye for quiet moments too.",
-    "image": "images/Sonja.jpg"
+    "image": [
+    "images/Sonja.jpg",
+    "images/Sonja2.png",
+    "images/Sonja3.png"
+  ]
   },
   {
     "name": "Shinobu Hagane",
