@@ -37,7 +37,10 @@
     "name": "Solas Kurage",
     "role": "Bartender",
     "desc": "Coming soon!",
-    "image": "images/Solas.png"
+    "image": [
+    "images/Solas1.png",
+    "images/Solas2.png"
+  ]
   },
   {
     "name": "Morri Bloodmorr",
