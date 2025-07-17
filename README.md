@@ -57,7 +57,7 @@ We host:
 
 ## 💌 Contact Us
 
-- Join our **Discord**: [discord.gg/yourlink](#)
+- Join our [**Discord**](https://discord.gg/EZ7bTCFZ6v)
 - Visit the venue in-game (Check the site for open hours!)
 - For support or business inquiries: `hello@neonneko.cc`
 
