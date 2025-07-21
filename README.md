@@ -51,7 +51,7 @@ We host:
 
 **Design & Development**  
 🐾 [Nilah](https://github.com/nilah-xiv) — Web Dev / Creative Lead  
-😎 [CorkedFever](https://github.com/CorkedFever) - Dev / Contributor 
+😎 [CorkedFever](https://github.com/CorkedFever) - Dev / Contributor  
 📷 Staff Photography — Sonja & Shino
 
 ---
