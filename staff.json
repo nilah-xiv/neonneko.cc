@@ -3,7 +3,10 @@
     "name": "Kiera Virelle",
     "role": "Owner",
     "desc": "Owner of Neon Neko and your favorite kind of trouble. Built for the wild ones—the bass chasers and strobe light lovers.",
-    "image": "images/Kiera.png"
+    "image": [
+    "images/Kiera1.png",
+    "images/Kiera2.png"
+  ]
   },
   {
     "name": "Nilah Valoryn",
