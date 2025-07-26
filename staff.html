@@ -445,6 +445,59 @@
   background: var(--neon-pink);
   box-shadow: 0 0 5px var(--neon-pink);
 }
+.open-timer-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: 500;
+  margin: 0.75rem auto 0 auto;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--neon-blue);
+  border-radius: 8px;
+  max-width: fit-content;
+  background: rgba(14, 14, 37, 0.65);
+  color: var(--neon-blue);
+  box-shadow: 0 0 8px #00FFF733;
+  backdrop-filter: blur(4px);
+  line-height: 1;
+  gap: 0.35rem; /* minimal spacing */
+}
+
+.timer-label {
+  font-weight: 600;
+  color: var(--neon-blue);
+  text-shadow: 0 0 3px #00FFF755;
+  white-space: nowrap;
+}
+
+.convert {
+  font-size: 0.65rem;
+  color: #888;
+  margin-left: 0.25rem;
+}
+
+.divider {
+  color: #555;
+  font-size: 0.8rem;
+  margin: 0 0.4rem;
+}
+
+.opening-text {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 0.72rem;
+}
+
+.countdown-part {
+  font-family: monospace;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-shadow: 0 0 4px #00FFF7;
+}
+
+
 
   </style>
 </head>
@@ -475,7 +528,19 @@
     <a href="index.html#menu">Menu</a>
     <a href="index.html#apply">Apply Now!</a>
   </nav>
+ </div>
+ <div class="open-timer-inline">
+  <span class="timer-label">🕘 OPEN EVERY SATURDAY AT 10PM EST</span>
+  <span class="divider">·</span>
+  <span class="opening-text">Opening in</span>
+  <span class="countdown-part"><span id="days">--</span>d</span>
+  <span class="countdown-part"><span id="hours">--</span>h</span>
+  <span class="countdown-part"><span id="minutes">--</span>m</span>
+  <span class="countdown-part"><span id="seconds">--</span>s</span>
 </div>
+
+
+
 <div class="container"></div>
   <script>
     const cards = document.querySelectorAll(".card");
@@ -681,5 +746,54 @@ const canvas = document.getElementById("neonCanvas");
   });
   draw();
 </script>
+<script>
+function getNextSaturday10pmEST() {
+  const now = new Date();
+  const estOffset = -5 * 60;
+  const estNow = new Date(now.getTime() + (now.getTimezoneOffset() - estOffset) * 60000);
+  const day = estNow.getDay();
+  const daysUntilSaturday = (6 - day + 7) % 7;
+
+  const nextSaturday = new Date(estNow);
+  nextSaturday.setDate(estNow.getDate() + daysUntilSaturday);
+  nextSaturday.setHours(22, 0, 0, 0); // 10:00 PM EST
+
+  if (nextSaturday <= estNow) {
+    nextSaturday.setDate(nextSaturday.getDate() + 7);
+  }
+
+  return nextSaturday;
+}
+
+function updateCountdown() {
+  const now = new Date();
+  const target = getNextSaturday10pmEST();
+  const diff = target - now;
+
+  if (diff <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return;
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById("days").textContent = String(days).padStart(2, '0');
+  document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+
 </body>
 </html>
