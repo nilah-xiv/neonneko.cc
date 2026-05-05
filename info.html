@@ -3,249 +3,944 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venue Info | Neon Neko</title>
+  <title>Venue Details | Neon Neko</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="nnfavicon.ico">
+  <link rel="icon" type="image/x-icon" href="nnfavicon.ico">
   <style>
-    .nav-wrapper {
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-#main-nav {
-  background: var(--panel-bg);
-  backdrop-filter: blur(6px);
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  box-shadow: 0 0 10px #00FFF722;
-  position: relative;
-  z-index: 100;
-}
-
-#main-nav a {
-  display: inline-block;
-  margin: 0;
-  padding: 0.5rem 1.2rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--neon-blue);
-  border: 1px solid #00FFF744;
-  border-radius: 999px;
-  background: var(--bg);
-  text-decoration: none;
-  box-shadow: 0 0 6px #00FFF733, 0 0 12px #00FFF722;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-#main-nav a:hover {
-  color: #fff;
-  background: #FF4ECD11;
-  border-color: #FF4ECD88;
-  box-shadow: 0 0 6px #FF4ECD88, 0 0 12px #FF4ECD66, 0 0 20px #FF4ECD44;
-  text-shadow: 0 0 5px #FF4ECDaa;
-}
-
-#main-nav a.active {
-  background: #FF4ECD22;
-  border-color: #FF4ECD;
-  color: #fff;
-  box-shadow: 0 0 8px #FF4ECDcc, 0 0 16px #FF4ECD88;
-  text-shadow: 0 0 6px #FF4ECD;
-}
-/*Countdown*/
-.open-timer-inline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-weight: 500;
-  margin: 0.75rem auto 0 auto;
-  padding: 0.4rem 0.75rem;
-  border: 1px solid var(--neon-blue);
-  border-radius: 8px;
-  max-width: fit-content;
-  background: rgba(14, 14, 37, 0.65);
-  color: var(--neon-blue);
-  box-shadow: 0 0 8px #00FFF733;
-  backdrop-filter: blur(4px);
-  line-height: 1;
-  gap: 0.35rem; /* minimal spacing */
-}
-
-.timer-label {
-  font-weight: 600;
-  color: var(--neon-blue);
-  text-shadow: 0 0 3px #00FFF755;
-  white-space: nowrap;
-}
-
-.convert {
-  font-size: 0.65rem;
-  color: #888;
-  margin-left: 0.25rem;
-}
-
-.divider {
-  color: #555;
-  font-size: 0.8rem;
-  margin: 0 0.4rem;
-}
-
-.opening-text {
-  color: #ccc;
-  font-weight: 500;
-  font-size: 0.72rem;
-}
-
-.countdown-part {
-  font-family: monospace;
-  color: white;
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-shadow: 0 0 4px #00FFF7;
-}
-/*Countdown*/
-  </style>
-
-<body>
-<div class="nav-wrapper">
-  <nav id="main-nav">
-    <a href="index.html#home">Home</a>
-    <a href="info.html" class="active">Venue Details</a>
-    <a href="staff.html#staff">Team & Services</a>
-    <a href="index.html#menu">Menu</a>
-    <a href="/vip/vip.html" onclick="showPage('VIP', this, event)">💎 VIP Packages</a>
-    <a href="index.html#apply">Apply Now!</a>
-  </nav>
-
-</div>
- <div class="open-timer-inline">
-  <span class="timer-label">🕘 OPEN EVERY SATURDAY AT 10PM EST</span>
-  <span class="divider">·</span>
-  <span class="opening-text">Opening in</span>
-  <span class="countdown-part"><span id="days">--</span>d</span>
-  <span class="countdown-part"><span id="hours">--</span>h</span>
-  <span class="countdown-part"><span id="minutes">--</span>m</span>
-  <span class="countdown-part"><span id="seconds">--</span>s</span>
-</div>
-
-  <section class="page active" id="info">
-    <p class="subtext">Everything you need to know before stepping in</p>
-
-    <div class="glow-box">
-      <h2>📍 Location</h2>
-      <ul>
-        <li><strong>Server:</strong> Dynamis - Golem</li>
-        <li><strong>Location:</strong> Goblet, Ward 26, Plot 30</li>
-      </ul>
-    </div>
-
-    <div class="glow-box">
-      <h2>📶 Wi-Fi</h2>
-      <ul>
-        <li><strong>SSID:</strong>NeonNeko</li>
-        <li><strong>Password:</strong>NeonNekoPub</li>
-        <li>🧠 Please be respectful and avoid large downloads while connected.</li>
-      </ul>
-    </div>
-
-    <div class="glow-box">
-      <h2>💬 Join Our Discord</h2>
-      <p>Stay updated on events, hangouts, and exclusive giveaways!</p>
-      <a href="https://discord.gg/EZ7bTCFZ6v" class="button-link" target="_blank">Join the Server</a>
-    </div>
-
-    <div class="footer">© Neon Neko 2025 · Meow you later.</div>
-  </section>
-</body>
-</html>
-</script>
-  <canvas id="neonCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;"></canvas>
-
-<style>
-  body, html {
-    cursor: none !important;
-  }
-</style>
-
-<script>
-  const canvas = document.getElementById("neonCanvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  let trail = [];
-  const maxTrail = 20;
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    trail.push({ x: mouse.x, y: mouse.y });
-    if (trail.length > maxTrail) trail.shift();
-
-    ctx.beginPath();
-    for (let i = 0; i < trail.length - 1; i++) {
-      const p1 = trail[i];
-      const p2 = trail[i + 1];
-      ctx.moveTo(p1.x, p1.y);
-      ctx.lineTo(p2.x, p2.y);
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 50% 10%, rgba(32, 130, 155, 0.16), transparent 34rem),
+        radial-gradient(ellipse at 18% 58%, rgba(255, 78, 205, 0.13), transparent 28rem),
+        radial-gradient(ellipse at 82% 58%, rgba(0, 255, 247, 0.1), transparent 30rem),
+        linear-gradient(180deg, #03040a 0%, #050610 48%, #010208 100%);
+      background-size: 100% 100%;
     }
 
-    ctx.strokeStyle = "rgba(255, 0, 255, 0.8)";
-    ctx.lineWidth = 3;
-    ctx.lineJoin = "round";
-    ctx.lineCap = "round";
-    ctx.shadowColor = "rgba(255, 0, 255, 1)";
-    ctx.shadowBlur = 15;
-    ctx.stroke();
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.88) 0 9%, transparent 16% 84%, rgba(0,0,0,0.88) 91% 100%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 88px),
+        repeating-linear-gradient(180deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 78px);
+      opacity: 0.72;
+      mix-blend-mode: screen;
+    }
 
-    requestAnimationFrame(draw);
-  }
+    .club-interior {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(0,0,0,0.94) 0 11%, transparent 11.4% 88.6%, rgba(0,0,0,0.94) 89% 100%),
+        linear-gradient(116deg, transparent 0 19%, rgba(0,255,247,0.035) 19.2% 19.8%, transparent 20% 80%, rgba(255,78,205,0.035) 80.2% 80.8%, transparent 81%),
+        linear-gradient(180deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 18%, rgba(255,255,255,0.026) 18.2% 18.35%, transparent 18.6%),
+        linear-gradient(180deg, rgba(8,12,20,0.96) 0%, rgba(4,5,12,0.98) 58%, #010207 100%);
+    }
 
-  document.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
+    .club-interior::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 0 5.65%, rgba(0,255,247,0.08) 5.78% 5.96%, rgba(0,255,247,0.58) 6.04% 6.13%, #7ffefa 6.18% 6.26%, rgba(0,255,247,0.7) 6.32% 6.45%, rgba(0,255,247,0.1) 6.58% 6.82%, transparent 7.05% 16.8%, rgba(255,78,205,0.1) 16.95% 17.1%, rgba(255,78,205,0.58) 17.18% 17.3%, #ffb3ec 17.36% 17.44%, rgba(255,78,205,0.68) 17.5% 17.62%, rgba(255,78,205,0.1) 17.78% 18.05%, transparent 18.25% 81.85%, rgba(0,255,247,0.09) 82% 82.14%, rgba(0,255,247,0.52) 82.2% 82.32%, #8ffffb 82.38% 82.46%, rgba(0,255,247,0.62) 82.52% 82.64%, rgba(0,255,247,0.1) 82.78% 83.02%, transparent 83.25% 92.8%, rgba(255,78,205,0.08) 92.98% 93.1%, rgba(255,78,205,0.48) 93.18% 93.3%, #ff9be5 93.36% 93.43%, rgba(255,78,205,0.58) 93.5% 93.62%, rgba(255,78,205,0.08) 93.76% 94%, transparent 94.22%),
+        linear-gradient(90deg, transparent 0 30.7%, rgba(255,78,205,0.08) 30.88% 31.03%, rgba(255,78,205,0.34) 31.1% 31.22%, rgba(255,78,205,0.12) 31.34% 31.58%, transparent 31.78% 67.7%, rgba(0,255,247,0.08) 67.88% 68.03%, rgba(0,255,247,0.32) 68.1% 68.22%, rgba(0,255,247,0.12) 68.34% 68.58%, transparent 68.78%),
+        radial-gradient(ellipse at 50% 93%, rgba(255,78,205,0.2), transparent 30rem),
+        radial-gradient(ellipse at 50% 58%, rgba(0,255,247,0.1), transparent 42rem);
+      opacity: 0.54;
+      filter: drop-shadow(0 0 7px rgba(0,255,247,0.28)) drop-shadow(0 0 12px rgba(255,78,205,0.2));
+    }
 
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
+    .club-interior::after {
+      content: "";
+      position: fixed;
+      left: 5%;
+      right: 5%;
+      bottom: -20%;
+      height: 48%;
+      background:
+        linear-gradient(90deg, transparent 0 9%, rgba(0,255,247,0.28) 9.15% 9.38%, transparent 9.75% 50%, rgba(255,78,205,0.24) 50.1% 50.32%, transparent 50.7% 91%, rgba(0,255,247,0.24) 91.15% 91.38%, transparent 91.75%),
+        repeating-linear-gradient(90deg, transparent 0 74px, rgba(255,255,255,0.055) 75px 76px, transparent 77px 148px),
+        linear-gradient(180deg, rgba(0,255,247,0.04), rgba(0,0,0,0.9));
+      transform: perspective(700px) rotateX(64deg);
+      transform-origin: center bottom;
+      opacity: 0.7;
+      box-shadow: 0 -28px 80px rgba(0,0,0,0.76);
+    }
 
-  draw();
-</script>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname.toLowerCase();
-    const hash = window.location.hash;
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 1.4rem 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
 
-    if (path.includes("index") || hash === "#home") document.querySelector('a[href="#home"]')?.classList.add("active");
-    if (path.includes("staff")) document.querySelector('a[href="staff.html"]')?.classList.add("active");
-    if (path.includes("info")) document.querySelector('a[href="info.html"]')?.classList.add("active");
-    if (hash === "#about") document.querySelector('a[href="#about"]')?.classList.add("active");
-    if (hash === "#menu") document.querySelector('a[href="#menu"]')?.classList.add("active");
-    if (hash === "#apply") document.querySelector('a[href="#apply"]')?.classList.add("active");
-  });
-</script>
-</script>
-<script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
-<script src="src/ny-time.js"></script>
-<script>
-function updateCountdown() {
-  const parts = NYTimeUtils.getCountdownParts();
-  document.getElementById("days").textContent = String(parts.days).padStart(2, '0');
-  document.getElementById("hours").textContent = String(parts.hours).padStart(2, '0');
-  document.getElementById("minutes").textContent = String(parts.minutes).padStart(2, '0');
-  document.getElementById("seconds").textContent = String(parts.seconds).padStart(2, '0');
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-</script>
+    #main-nav {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      max-width: min(980px, calc(100vw - 2rem));
+      padding: 1.15rem;
+      border: 1px solid rgba(82,180,255,0.34);
+      border-radius: 4px;
+      background:
+        repeating-linear-gradient(180deg, rgba(140,210,255,0.055) 0 1px, transparent 1px 4px),
+        linear-gradient(135deg, rgba(36,130,255,0.14), rgba(0,255,247,0.05)),
+        rgba(4, 12, 26, 0.62);
+      box-shadow:
+        0 0 18px rgba(65,170,255,0.24),
+        inset 0 0 24px rgba(85,170,255,0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    #main-nav::before,
+    #main-nav::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    #main-nav::before {
+      inset: 0.45rem;
+      border: 1px solid rgba(120,205,255,0.22);
+      box-shadow: inset 0 0 18px rgba(65,170,255,0.12);
+    }
+
+    #main-nav::after {
+      left: 1rem;
+      right: 1rem;
+      top: 0.55rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(150,220,255,0.9), transparent);
+    }
+
+    #main-nav a {
+      position: relative;
+      min-width: 124px;
+      min-height: 66px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 1.05rem 0.8rem 0.7rem;
+      border: 1px solid rgba(95,185,255,0.62);
+      border-radius: 3px;
+      color: #bfeeff;
+      background:
+        linear-gradient(90deg, rgba(130,205,255,0.14) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(175,225,255,0.08) 0 1px, transparent 1px 5px),
+        linear-gradient(145deg, rgba(38,125,255,0.26), rgba(0,255,247,0.08) 58%, rgba(38,125,255,0.18));
+      background-size: 18px 100%, 100% 100%, 100% 100%;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 7px rgba(120,225,255,0.86), 0 0 14px rgba(0,140,255,0.38);
+      box-shadow:
+        0 0 10px rgba(65,170,255,0.22),
+        inset 0 0 18px rgba(120,205,255,0.13);
+      overflow: hidden;
+      transition: color 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    #main-nav a::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 0.45rem;
+      width: 34px;
+      height: 10px;
+      border-top: 1px solid rgba(205,240,255,0.72);
+      border-bottom: 1px solid rgba(205,240,255,0.35);
+      opacity: 0.75;
+    }
+
+    #main-nav a::after {
+      content: "";
+      position: absolute;
+      right: 0.55rem;
+      top: 0.45rem;
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgba(205,240,255,0.52);
+      border-radius: 50%;
+      box-shadow: inset 0 0 8px rgba(120,205,255,0.18);
+      opacity: 0.75;
+    }
+
+    #main-nav a span {
+      position: relative;
+      z-index: 2;
+    }
+
+    #main-nav a .screen-sweep {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(110deg, transparent 0 28%, rgba(255,255,255,0.48) 44%, transparent 60% 100%);
+      opacity: 0;
+      transform: translateX(-130%);
+      pointer-events: none;
+    }
+
+    #main-nav a:hover,
+    #main-nav a.active {
+      color: #fff;
+      border-color: rgba(150,225,255,0.96);
+      background:
+        linear-gradient(90deg, rgba(190,235,255,0.22) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(230,245,255,0.12) 0 1px, transparent 1px 4px),
+        linear-gradient(145deg, rgba(50,145,255,0.42), rgba(0,255,247,0.16) 58%, rgba(255,78,205,0.2));
+      box-shadow:
+        0 0 16px rgba(95,185,255,0.42),
+        0 0 26px rgba(0,255,247,0.16),
+        inset 0 0 22px rgba(190,235,255,0.18);
+      text-shadow: 0 0 8px rgba(185,235,255,0.85);
+      transform: translateY(-3px);
+    }
+
+    #main-nav a:hover .screen-sweep {
+      animation: terminalSweep 850ms ease forwards;
+    }
+
+    #main-nav a:hover::before,
+    #main-nav a.active::before {
+      border-color: rgba(255,255,255,0.85);
+      box-shadow: 0 0 8px rgba(185,235,255,0.45);
+    }
+
+    #main-nav a:hover::after,
+    #main-nav a.active::after {
+      border-color: rgba(255,255,255,0.82);
+      box-shadow: inset 0 0 10px rgba(120,205,255,0.28), 0 0 10px rgba(0,255,247,0.34);
+    }
+
+    @keyframes terminalSweep {
+      0% {
+        opacity: 0;
+        transform: translateX(-130%);
+      }
+      22% {
+        opacity: 0.85;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(130%);
+      }
+    }
+
+    .open-timer-inline {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      width: 100%;
+      max-width: none;
+      margin: 1rem 0 0;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid rgba(0,255,247,0.5);
+      border-radius: 7px;
+      background: rgba(3, 6, 18, 0.9);
+      color: var(--neon-blue);
+      box-shadow: 0 0 12px rgba(0,255,247,0.18);
+      backdrop-filter: blur(10px);
+      line-height: 1;
+    }
+
+    .timer-label {
+      color: var(--neon-blue);
+      font-weight: 700;
+      white-space: nowrap;
+      text-shadow: 0 0 6px rgba(0,255,247,0.55);
+    }
+
+    .divider {
+      color: rgba(255,255,255,0.45);
+      margin: 0 0.35rem;
+    }
+
+    .opening-text {
+      color: #d7daf5;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .countdown-part {
+      color: #fff;
+      font-family: monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(0,255,247,0.76);
+    }
+
+    .venue-shell {
+      position: relative;
+      z-index: 2;
+      width: min(94vw, 1500px);
+      margin: 1.35rem auto 0;
+      padding: 1.85rem clamp(1rem, 1.7vw, 1.8rem) 2.15rem;
+      border: 1px solid rgba(112, 205, 255, 0.22);
+      border-radius: 12px;
+      background:
+        linear-gradient(90deg, rgba(0,255,247,0.07) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(150,220,255,0.04) 0 1px, transparent 1px 6px),
+        radial-gradient(ellipse at 50% 0%, rgba(0,255,247,0.1), transparent 28rem),
+        radial-gradient(ellipse at 50% 100%, rgba(255,78,205,0.11), transparent 30rem),
+        rgba(3, 8, 22, 0.74);
+      background-size: 28px 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+      box-shadow:
+        0 0 28px rgba(0,255,247,0.12),
+        0 0 50px rgba(255,78,205,0.07),
+        inset 0 0 0 1px rgba(255,255,255,0.035),
+        inset 0 0 54px rgba(0,0,0,0.52);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+    }
+
+    .venue-shell::before,
+    .venue-shell::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .venue-shell::before {
+      inset: 0.7rem;
+      border: 1px solid rgba(160, 230, 255, 0.14);
+      box-shadow: inset 0 0 28px rgba(0,255,247,0.06);
+    }
+
+    .venue-shell::after {
+      left: 1.6rem;
+      right: 1.6rem;
+      top: 1rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,247,0.55), rgba(255,78,205,0.42), transparent);
+      box-shadow: 0 0 14px rgba(0,255,247,0.24);
+    }
+
+    .venue-hero {
+      margin-bottom: 1.35rem;
+      text-align: center;
+      position: relative;
+      padding: 0.35rem 1rem 0;
+      z-index: 1;
+    }
+
+    .venue-kicker {
+      color: var(--neon-blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(0,255,247,0.55);
+    }
+
+    .venue-hero h1 {
+      margin: 0.35rem auto 0.6rem;
+      color: transparent;
+      font-size: clamp(3rem, 5.8vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0.2em;
+      background: linear-gradient(100deg, #ffffff 0%, #83fffb 18%, #00fff7 35%, #ff7cda 58%, #d5b6ff 76%, #ffffff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 0 3px rgba(0,255,247,0.4);
+      position: relative;
+      display: inline-block;
+      padding: 0.15rem 0.85rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: inset 0 0 8px rgba(255,255,255,0.08), 0 0 30px rgba(255,255,255,0.06);
+      background-size: 420% 420%;
+      filter: drop-shadow(0 0 5px rgba(255,255,255,0.16)) hue-rotate(0deg) saturate(1.1);
+      animation: holoTitleShift 3.8s ease-in-out infinite;
+    }
+
+    .venue-hero h1::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -0.85rem;
+      transform: translateX(-50%);
+      width: 10rem;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(0,255,247,0.9), rgba(255,78,205,0.9));
+      box-shadow: 0 0 18px rgba(0,255,247,0.35), 0 0 28px rgba(255,78,205,0.28);
+    }
+
+    @keyframes holoTitleShift {
+      0%, 100% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 5px rgba(255,255,255,0.16)) hue-rotate(0deg) saturate(1.12);
+        text-shadow: 0 0 3px rgba(0,255,247,0.4);
+      }
+      42% {
+        background-position: 72% 50%;
+        filter: drop-shadow(0 0 8px rgba(255,78,205,0.2)) hue-rotate(35deg) saturate(1.35);
+        text-shadow: 0 0 3px rgba(255,78,205,0.4);
+      }
+      68% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 8px rgba(0,255,247,0.2)) hue-rotate(-28deg) saturate(1.32);
+        text-shadow: 0 0 3px rgba(143,115,255,0.4);
+      }
+    }
+
+    .venue-hero p {
+      color: #d9dcff;
+      font-size: 1rem;
+      max-width: 820px;
+      margin: 0.1rem auto 0;
+      text-shadow: 0 0 8px rgba(0,255,247,0.18);
+    }
+
+    .info-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      perspective: 1000px;
+    }
+
+    .glow-box {
+      position: relative;
+      min-height: 185px;
+      margin-top: 0;
+      padding: 1.1rem;
+      overflow: hidden;
+      border: 1px solid rgba(118,210,255,0.5);
+      border-radius: 5px;
+      background:
+        linear-gradient(90deg, rgba(160,225,255,0.12) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(190,235,255,0.08) 0 1px, transparent 1px 5px),
+        radial-gradient(ellipse at 18% 0%, rgba(185,235,255,0.18), transparent 42%),
+        linear-gradient(145deg, rgba(22,96,180,0.28), rgba(0,255,247,0.08) 52%, rgba(255,78,205,0.08)),
+        rgba(3, 10, 26, 0.68);
+      background-size: 22px 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+      box-shadow:
+        0 0 18px rgba(78,178,255,0.2),
+        0 0 34px rgba(0,255,247,0.08),
+        inset 0 0 24px rgba(160,225,255,0.12);
+      text-align: left;
+      backdrop-filter: blur(10px);
+      transform: translateZ(0);
+    }
+
+    .glow-box::before {
+      content: "";
+      position: absolute;
+      inset: 0.55rem;
+      pointer-events: none;
+      border: 1px solid rgba(190,235,255,0.16);
+      box-shadow: inset 0 0 20px rgba(120,205,255,0.1);
+    }
+
+    .glow-box::after {
+      content: "SYS";
+      position: absolute;
+      right: 0.9rem;
+      top: 0.72rem;
+      color: rgba(190,235,255,0.62);
+      font-family: monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-shadow: 0 0 7px rgba(120,205,255,0.42);
+    }
+
+    .glow-box h2 {
+      position: relative;
+      margin: 0 0 0.9rem;
+      padding: 0.62rem 0.85rem;
+      color: #fff;
+      font-size: 1.08rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: rgba(0, 16, 36, 0.75);
+      border-radius: 999px;
+      border: 1px solid rgba(0, 255, 247, 0.18);
+      box-shadow: 0 0 12px rgba(0, 255, 247, 0.12), inset 0 0 8px rgba(255, 255, 255, 0.06);
+      text-shadow: 0 0 12px rgba(0, 255, 247, 0.7), 0 0 18px rgba(255, 78, 205, 0.22);
+    }
+
+    .glow-box h2::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -0.55rem;
+      transform: translateX(-50%);
+      width: 5rem;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(0,255,247,0.95), rgba(255,78,205,0.9));
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(0,255,247,0.45), 0 0 18px rgba(255,78,205,0.26);
+    }
+
+    .glow-box h2::after {
+      content: "";
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: rgba(255,78,205,0.8);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(255,78,205,0.45);
+    }
+
+    .glow-box h2::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -2px;
+      width: 7px;
+      height: 7px;
+      border: 1px solid rgba(255,78,205,0.7);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255,78,205,0.5);
+    }
+
+    .glow-box ul {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .glow-box li {
+      position: relative;
+      padding-left: 0.85rem;
+      border-bottom: 1px solid rgba(190,235,255,0.12);
+      color: #eaf8ff;
+      line-height: 1.5;
+    }
+
+    .glow-box li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      width: 4px;
+      height: 4px;
+      background: var(--neon-blue);
+      box-shadow: 0 0 7px rgba(0,255,247,0.72);
+    }
+
+    .glow-box strong {
+      color: #9beaff;
+      text-shadow: 0 0 7px rgba(0,255,247,0.28);
+    }
+
+    .glow-box p {
+      color: #d9f4ff;
+      line-height: 1.55;
+    }
+
+    .glow-box:hover {
+      border-color: rgba(190,235,255,0.82);
+      box-shadow:
+        0 0 22px rgba(78,178,255,0.28),
+        0 0 44px rgba(0,255,247,0.1),
+        inset 0 0 28px rgba(160,225,255,0.16);
+    }
+
+    .glow-box.pink {
+      border-color: rgba(255,78,205,0.48);
+      background:
+        linear-gradient(90deg, rgba(255,78,205,0.12) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(190,235,255,0.07) 0 1px, transparent 1px 5px),
+        radial-gradient(ellipse at 18% 0%, rgba(255,78,205,0.2), transparent 42%),
+        linear-gradient(145deg, rgba(22,96,180,0.2), rgba(0,255,247,0.06) 52%, rgba(255,78,205,0.14)),
+        rgba(3, 10, 26, 0.68);
+    }
+
+    .glow-box.pink h2 {
+      color: #ffd7f5;
+      text-shadow: 0 0 10px rgba(255,78,205,0.68), 0 0 18px rgba(0,255,247,0.22);
+    }
+
+    .glow-box.wide {
+      grid-column: span 2;
+    }
+
+    .glow-box.music-wide {
+      grid-column: 1 / -1;
+      min-height: 150px;
+    }
+
+    .data-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.9rem;
+    }
+
+    .data-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid rgba(0,255,247,0.34);
+      border-radius: 999px;
+      color: #eaf8ff;
+      background: rgba(0,255,247,0.08);
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: inset 0 0 12px rgba(0,255,247,0.05);
+    }
+
+    .data-pill.pink {
+      border-color: rgba(255,78,205,0.42);
+      background: rgba(255,78,205,0.1);
+      box-shadow: inset 0 0 12px rgba(255,78,205,0.06);
+    }
+
+    .network-block {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      border: 1px solid rgba(190,235,255,0.16);
+      background: rgba(0,0,0,0.18);
+    }
+
+    .network-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .network-name {
+      color: var(--neon-pink);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 8px rgba(255,78,205,0.45);
+    }
+
+    .network-line {
+      margin-top: 0.45rem;
+      color: #eaf8ff;
+      font-family: monospace;
+      font-size: 0.9rem;
+      overflow-wrap: anywhere;
+    }
+
+    .button-link {
+      margin-left: 0;
+      border: 1px solid rgba(0,255,247,0.72);
+      border-radius: 7px;
+      background: rgba(0,255,247,0.14);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0,255,247,0.22);
+    }
+
+    .footer {
+      padding-top: 2rem;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .glow-box.wide,
+      .glow-box.music-wide {
+        grid-column: auto;
+      }
+
+      #main-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+      }
+
+      #main-nav a {
+        flex: 0 0 auto;
+      }
+    }
+
+  </style>
+  <link rel="stylesheet" href="terminal.css">
+  <style>
+    body .venue-shell {
+      display: grid;
+      grid-template-columns: minmax(210px, 0.22fr) minmax(0, 1fr);
+      gap: 1rem;
+      width: min(94vw, 1520px);
+      transform: perspective(1400px) rotateX(0.55deg);
+      transform-origin: center top;
+      clip-path: polygon(1.2% 0, 98.8% 0, 100% 100%, 0 100%);
+    }
+
+    .terminal-main {
+      position: relative;
+      z-index: 2;
+      min-width: 0;
+    }
+
+    body .venue-shell > .footer {
+      grid-column: 1 / -1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ai-greeter-panel {
+      position: relative;
+      z-index: 2;
+      min-height: 100%;
+      padding: 0.9rem;
+      border: 1px solid rgba(0,255,247,0.28);
+      border-radius: 7px;
+      background:
+        linear-gradient(90deg, rgba(0,255,247,0.08) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(190,235,255,0.05) 0 1px, transparent 1px 6px),
+        linear-gradient(180deg, rgba(0,18,38,0.74), rgba(4,8,24,0.86));
+      background-size: 20px 100%, 100% 100%, 100% 100%;
+      box-shadow: inset 0 0 24px rgba(0,255,247,0.07), 0 0 18px rgba(0,255,247,0.08);
+      text-align: left;
+    }
+
+    .ai-greeter-panel::before {
+      content: "";
+      position: absolute;
+      left: 0.8rem;
+      right: 0.8rem;
+      top: 0.75rem;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,255,247,0.85), rgba(255,78,205,0.62), transparent);
+      box-shadow: 0 0 10px rgba(0,255,247,0.28);
+    }
+
+    .ai-label {
+      margin-top: 0.65rem;
+      color: #ff91df;
+      font-family: monospace;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(255,78,205,0.4);
+    }
+
+    .ai-greeter-panel h2 {
+      margin: 0.95rem 0 0.65rem;
+      color: #eaffff;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0,255,247,0.4);
+    }
+
+    .ai-greeter-panel p,
+    .ai-greeter-panel li {
+      color: rgba(226,246,255,0.84);
+      font-size: 0.8rem;
+      line-height: 1.48;
+    }
+
+    .ai-greeter-panel ul {
+      margin-top: 1rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .ai-greeter-panel li {
+      margin-top: 0.45rem;
+      padding: 0.4rem 0.48rem;
+      border: 1px solid rgba(120,220,255,0.13);
+      background: rgba(0,0,0,0.16);
+    }
+
+    .ai-greeter-panel strong {
+      color: #9ffffc;
+      font-family: monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    body .venue-hero h1 {
+      border: 0;
+      box-shadow: none;
+      border-radius: 0;
+      padding-inline: 0;
+    }
+
+    body .info-grid {
+      perspective: 1200px;
+    }
+
+    body .glow-box {
+      transform: translateZ(0) rotateX(0deg);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      will-change: transform;
+    }
+
+    body .glow-box:hover {
+      transform: translateY(-4px) rotateX(2deg) rotateY(-1.5deg);
+    }
+
+    body .glow-box:nth-child(2n):hover {
+      transform: translateY(-4px) rotateX(2deg) rotateY(1.5deg);
+    }
+
+    body .glow-box::before {
+      background: linear-gradient(180deg, transparent 0, rgba(0,255,247,0.12) 48%, transparent 52%);
+      background-size: 100% 220%;
+      animation: moduleScan 4.8s linear infinite;
+    }
+
+    @keyframes moduleScan {
+      from { background-position: 0 -120%; }
+      to { background-position: 0 160%; }
+    }
+
+    @media (max-width: 900px) {
+      body .venue-shell {
+        display: block;
+        transform: none;
+        clip-path: none;
+      }
+
+      .ai-greeter-panel {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="club-interior" aria-hidden="true"></div>
+
+  <div class="nav-wrapper">
+    <nav id="main-nav">
+      <a href="index.html#home"><span>Home</span><i class="screen-sweep"></i></a>
+      <a href="info.html" class="active"><span>Venue Details</span><i class="screen-sweep"></i></a>
+      <a href="index.html#menu"><span>Menu</span><i class="screen-sweep"></i></a>
+      <a href="staff.html#staff"><span>Team & Services</span><i class="screen-sweep"></i></a>
+      <a href="/vip/vip.html"><span>VIP Packages</span><i class="screen-sweep"></i></a>
+    </nav>
+  </div>
+
+  <main class="venue-shell">
+    <aside class="ai-greeter-panel" aria-label="AI greeter terminal">
+      <div class="ai-label">Neon Neko // AI Greeter</div>
+      <h2>Welcome, Guest</h2>
+      <p>Select a data node to view venue access details, network credentials, events, games, and bar systems.</p>
+      <ul>
+        <li><strong>STATUS</strong><br>Club systems online</li>
+        <li><strong>MODE</strong><br>Guest navigation</li>
+        <li><strong>ACCESS</strong><br>Boarding clearance active</li>
+      </ul>
+    </aside>
+
+    <div class="terminal-main">
+      <section class="venue-hero">
+        <div class="venue-kicker">Navigation Console</div>
+        <h1>Venue Details</h1>
+        <p>Your quick-access hub for location, networks, Discord, events, games, drinks, and DJs.</p>
+      </section>
+
+      <section class="info-grid">
+      <div class="glow-box">
+        <h2>Location</h2>
+        <ul>
+          <li><strong>Server:</strong> Dynamis - Golem</li>
+          <li><strong>Location:</strong> Goblet, Ward 26, Plot 30</li>
+        </ul>
+        <div class="open-timer-inline">
+          <span class="timer-label">NEXT LAUNCH: SATURDAY 10PM ET</span>
+          <span class="divider">/</span>
+          <span class="opening-text">Launch in</span>
+          <span class="countdown-part"><span id="days">--</span>d</span>
+          <span class="countdown-part"><span id="hours">--</span>h</span>
+          <span class="countdown-part"><span id="minutes">--</span>m</span>
+          <span class="countdown-part"><span id="seconds">--</span>s</span>
+        </div>
+      </div>
+
+      <div class="glow-box wide pink">
+        <h2>Network Access</h2>
+        <div class="network-block">
+          <div class="network-name">Lightless Sync</div>
+          <div class="network-line"><strong>Wi-Fi:</strong> WIFIMSS-HY4JXFGE8TM5</div>
+          <div class="network-line"><strong>Password:</strong> NeonNekoPub</div>
+        </div>
+        <div class="network-block">
+          <div class="network-name">PSYNC</div>
+          <div class="network-line"><strong>Wi-Fi:</strong> NeonNeko</div>
+          <div class="network-line"><strong>Password:</strong> NeonNekoPub</div>
+        </div>
+      </div>
+
+      <div class="glow-box">
+        <h2>Discord</h2>
+        <p>Stay updated on openings, DRT, bingo nights, raffles, DJ sets, and venue announcements.</p>
+        <a href="https://discord.gg/mxJJTpwdBb" class="button-link" target="_blank" rel="noreferrer">Join the Server</a>
+      </div>
+
+      <div class="glow-box pink">
+        <h2>Events</h2>
+        <p>Weekly activities and rotating club nights built around community games and big-room energy.</p>
+        <div class="data-pill-row">
+          <span class="data-pill">DRT</span>
+          <span class="data-pill pink">Bingo</span>
+          <span class="data-pill">50/50 Raffle</span>
+        </div>
+      </div>
+
+      <div class="glow-box">
+        <h2>Games & Gamba</h2>
+        <p>Bring your luck to the tables or grab a gamba drink from the bar before the next round starts.</p>
+        <div class="data-pill-row">
+          <span class="data-pill">Blackjack</span>
+          <span class="data-pill pink">Gamba Drinks</span>
+          <span class="data-pill">Games</span>
+        </div>
+      </div>
+
+      <div class="glow-box pink music-wide">
+        <h2>Music & Bar</h2>
+        <p>Resident DJs, bar service, neon drinks, and a high-energy club floor for the full spaceship nightlife feel.</p>
+        <div class="data-pill-row">
+          <span class="data-pill">DJs</span>
+          <span class="data-pill pink">Bar</span>
+          <span class="data-pill">Bass Nights</span>
+        </div>
+      </div>
+      </section>
+    </div>
+
+    <div class="footer">Neon Neko 2026</div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+  <script src="src/ny-time.js"></script>
+  <script>
+    function updateCountdown() {
+      const parts = NYTimeUtils.getCountdownParts();
+      document.getElementById("days").textContent = String(parts.days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(parts.hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(parts.minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(parts.seconds).padStart(2, "0");
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>

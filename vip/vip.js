@@ -5,7 +5,7 @@ fetch('vip-contributors.json')
     list.innerHTML = '';
     data.forEach(person => {
       const li = document.createElement('li');
-      li.textContent = person.name;
+      li.innerHTML = `<span class="vip-name">${person.name}</span>`;
       list.appendChild(li);
     });
   })

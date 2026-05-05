@@ -6,223 +6,620 @@
   <title>VIP Packages | Neon Neko</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../terminal.css">
   <link rel="icon" type="image/x-icon" href="../nnfavicon.ico">
   <style>
     :root {
-      --vip-gold: #FFD700;
-      /* Use the same deep background as the rest of the site for the VIP page */
-      --vip-bg: #0b0b1b;
+      --vip-gold: #ffd86b;
+      --vip-cyan: #8efcff;
+      --vip-pink: #ff7cda;
+      --vip-ink: #02030a;
     }
 
     body {
-      background-color: var(--vip-bg);
-      color: var(--vip-gold);
-      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
       margin: 0;
       padding: 0;
+      font-family: 'Outfit', sans-serif;
+      color: #eafcff;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(0, 255, 247, 0.12), transparent 30rem),
+        radial-gradient(ellipse at 16% 22%, rgba(255, 216, 107, 0.12), transparent 18rem),
+        radial-gradient(ellipse at 84% 24%, rgba(255, 78, 205, 0.1), transparent 22rem),
+        linear-gradient(180deg, #03040a 0%, #050712 46%, #010208 100%) !important;
+      background-attachment: fixed !important;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.8), transparent 18% 82%, rgba(0,0,0,0.8)),
+        linear-gradient(180deg, rgba(0,0,0,0.72) 0 9%, transparent 22% 78%, rgba(0,0,0,0.78) 100%),
+        linear-gradient(90deg, rgba(120,230,255,0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(255,120,220,0.028) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 34px 34px, 34px 34px;
+      opacity: 0.7;
     }
 
     .nav-wrapper {
       display: flex;
       justify-content: center;
-      padding-top: 2rem;
+      padding: 1.15rem 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
 
-    #main-nav a[href="vip/vip.html"],
-    #main-nav a[href="../vip/vip.html"] {
-      background: var(--vip-gold);
-      color: black;
-      border-color: var(--vip-gold);
-      box-shadow: 0 0 10px var(--vip-gold);
+    .nav-wrapper #main-nav a.active,
+    .nav-wrapper #main-nav a[href="vip.html"] {
+      background: linear-gradient(145deg, rgba(255, 216, 107, 0.32), rgba(255, 78, 205, 0.2));
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 0 16px rgba(255, 216, 107, 0.22), inset 0 0 18px rgba(255, 255, 255, 0.12);
     }
 
-    .vip-section {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 2rem;
-      /* Keep the interior of the VIP block a solid black matching the site background */
-      background: var(--vip-bg);
-      border: 2px solid var(--vip-gold);
-      border-radius: 16px;
-      box-shadow: 0 0 20px var(--vip-gold);
+    .vip-shell {
+      position: relative;
+      width: min(96vw, 1540px);
+      margin: 1rem auto 1.75rem;
+      padding: 1.45rem clamp(1rem, 2vw, 2rem) 1.8rem;
+      border-radius: 1.5rem;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(0,255,247,0.18), transparent 24rem),
+        radial-gradient(ellipse at 12% 18%, rgba(255,216,107,0.14), transparent 18rem),
+        radial-gradient(ellipse at 88% 22%, rgba(255,78,205,0.12), transparent 20rem),
+        linear-gradient(90deg, rgba(0,255,247,0.07) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(160,225,255,0.035) 0 1px, transparent 1px 6px),
+        linear-gradient(180deg, rgba(8, 12, 28, 0.98), rgba(4, 8, 20, 0.94));
+      background-size: 100% 100%, 100% 100%, 100% 100%, 28px 100%, 100% 100%, 100% 100%;
+      border: 1px solid rgba(112, 205, 255, 0.24);
+      box-shadow:
+        0 0 34px rgba(0,255,247,0.16),
+        0 0 70px rgba(255,78,205,0.1),
+        0 0 110px rgba(255,216,107,0.06),
+        inset 0 0 0 1px rgba(255,255,255,0.04),
+        inset 0 0 54px rgba(0,0,0,0.54);
+      overflow: hidden;
     }
 
-    .vip-section h2 {
-      color: var(--vip-gold);
-      font-size: 2.75rem;
+    .vip-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0.7rem;
+      border: 1px solid rgba(160, 230, 255, 0.16);
+      box-shadow: inset 0 0 32px rgba(0,255,247,0.08);
+      pointer-events: none;
+    }
+
+    .vip-shell::after {
+      content: "";
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      top: 1rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,247,0.7), rgba(255,216,107,0.62), rgba(255,78,205,0.55), transparent);
+      box-shadow: 0 0 18px rgba(0,255,247,0.28), 0 0 20px rgba(255,216,107,0.16);
+      pointer-events: none;
+    }
+
+    .vip-hero {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      padding: 0.25rem 1rem 1rem;
       margin-bottom: 1rem;
     }
 
-    .vip-section p {
-      color: #eee;
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-      font-size: 1.1rem;
+    .vip-kicker {
+      color: var(--vip-cyan);
+      font-family: monospace;
+      font-size: 0.84rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(0,255,247,0.65), 0 0 18px rgba(255,216,107,0.18);
     }
 
-    .vip-card {
-      /* Use a solid dark background for each VIP tier card to match the VIP section */
-      background: var(--vip-bg);
-      border: 1px solid var(--vip-gold);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 10px var(--vip-gold);
+    .vip-hero h1 {
+      position: relative;
+      display: inline-block;
+      margin: 0.3rem auto 0.45rem;
+      color: transparent;
+      font-size: clamp(3.1rem, 6vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: linear-gradient(100deg, #ffffff 0%, #fff9db 14%, #ffd86b 30%, #ff9ee2 54%, #a7f7ff 76%, #ffffff 100%);
+      background-size: 420% 420%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.78),
+        0 0 24px rgba(255,216,107,0.42),
+        0 0 40px rgba(255,78,205,0.24);
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.16)) saturate(1.18);
+      animation: holoTitleShift 3.8s ease-in-out infinite;
     }
 
-    .vip-card h3 {
-      font-size: 1.7rem;
-      margin-bottom: 0.75rem;
-      color: var(--vip-gold);
+    .vip-hero h1::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -0.85rem;
+      transform: translateX(-50%);
+      width: 13rem;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255,216,107,0.98), rgba(0,255,247,0.96), rgba(255,78,205,0.94));
+      box-shadow: 0 0 22px rgba(255,216,107,0.42), 0 0 34px rgba(0,255,247,0.3);
     }
 
-    .vip-card ul {
-      padding-left: 1rem;
+    .vip-hero p {
+      max-width: 920px;
+      margin: 1rem auto 0;
+      color: rgba(241, 250, 255, 0.95);
+      line-height: 1.55;
+      font-size: 1.05rem;
+      text-shadow: 0 0 10px rgba(0,255,247,0.14), 0 0 22px rgba(255,78,205,0.08);
+    }
+
+    .vip-callout {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 0;
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 216, 107, 0.38);
+      background: linear-gradient(145deg, rgba(255,216,107,0.18), rgba(255,78,205,0.12), rgba(0,255,247,0.08));
+      color: #fffbe8;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255,216,107,0.36);
+      box-shadow:
+        inset 0 0 18px rgba(255,216,107,0.12),
+        inset 0 0 26px rgba(255,78,205,0.06),
+        0 0 18px rgba(255,216,107,0.14);
+    }
+
+    .vip-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.75rem auto 0;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0,255,247,0.28);
+      background: linear-gradient(145deg, rgba(0,255,247,0.12), rgba(255,78,205,0.08), rgba(255,216,107,0.08));
       color: #fff;
-      line-height: 1.6;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(0,255,247,0.24), 0 0 18px rgba(255,78,205,0.12);
+      box-shadow:
+        inset 0 0 18px rgba(0,255,247,0.08),
+        0 0 18px rgba(0,255,247,0.08);
     }
 
-    .vip-card ul li::marker {
-      color: var(--vip-gold);
+    .vip-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 0.7rem;
+      align-items: stretch;
     }
-    #vip-contributors ul {
-  padding-left: 1.5rem;
-  color: #fff;
-  font-size: 1.1rem;
-}
 
-#vip-contributors ul li::marker {
-  color: var(--vip-gold);
-}
+    .vip-tier,
+    .vip-roster {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 216, 107, 0.26);
+      border-top: 3px solid var(--tier-accent, rgba(255, 216, 107, 0.85));
+      background:
+        radial-gradient(circle at 0% 0%, rgba(255,216,107,0.1), transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.06), transparent 28%),
+        linear-gradient(90deg, rgba(255,216,107,0.08) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(190,235,255,0.05) 0 1px, transparent 1px 6px),
+        linear-gradient(145deg, rgba(10, 18, 34, 0.97), rgba(15, 25, 45, 0.93));
+      box-shadow:
+        0 0 22px rgba(255,216,107,0.12),
+        0 0 36px rgba(0,255,247,0.08),
+        0 0 48px rgba(255,78,205,0.05),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
+      padding: 1.15rem 1rem 1.05rem;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(8px);
+      transform: translateY(0);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      will-change: transform;
+    }
 
+    .vip-tier::before,
+    .vip-roster::before {
+      content: "";
+      position: absolute;
+      inset: 0.55rem;
+      pointer-events: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow:
+        inset 0 0 18px rgba(0,255,247,0.08),
+        inset 0 0 24px rgba(255,216,107,0.05);
+    }
+
+    .vip-tier::after,
+    .vip-roster::after {
+      content: "";
+      position: absolute;
+      left: -24%;
+      top: 18%;
+      width: 48%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), rgba(255,216,107,0.45), transparent);
+      opacity: 0.7;
+      transform: skewX(-18deg);
+      animation: vipSweep 5.4s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .vip-tier:hover,
+    .vip-roster:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.24);
+      box-shadow:
+        0 0 26px rgba(255,216,107,0.18),
+        0 0 44px rgba(0,255,247,0.14),
+        0 0 66px rgba(255,78,205,0.09),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+    }
+
+    .vip-tier.featured {
+      grid-column: auto;
+      border-color: rgba(255, 216, 107, 0.42);
+      box-shadow:
+        0 0 34px rgba(255,216,107,0.18),
+        0 0 56px rgba(255,78,205,0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.05);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255,216,107,0.22), transparent 20rem),
+        radial-gradient(circle at 80% 100%, rgba(255,78,205,0.16), transparent 18rem),
+        linear-gradient(90deg, rgba(255,216,107,0.12) 0 1px, transparent 1px),
+        repeating-linear-gradient(180deg, rgba(190,235,255,0.06) 0 1px, transparent 1px 6px),
+        linear-gradient(145deg, rgba(10, 18, 34, 0.99), rgba(17, 30, 50, 0.95));
+      min-height: 430px;
+    }
+
+    .tier-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .tier-label {
+      display: block;
+      color: transparent;
+      background: linear-gradient(135deg, #ffffff 0%, #8efcff 18%, #ffd86b 50%, #ff7cda 76%, #ffffff 100%);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-family: monospace;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px rgba(0,255,247,0.66),
+        0 0 18px rgba(255,216,107,0.32),
+        0 0 24px rgba(255,78,205,0.18),
+        0 0 34px rgba(255,255,255,0.1);
+      margin-bottom: 0.35rem;
+      animation: holoTitleShift 4.8s ease-in-out infinite;
+    }
+
+    .vip-tier h2 {
+      margin: 0 0 0.15rem;
+      color: transparent;
+      background: linear-gradient(100deg, #ffffff 0%, #fff9db 14%, #ffd86b 30%, #ff9ee2 54%, #a7f7ff 76%, #ffffff 100%);
+      background-size: 320% 320%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.82),
+        0 0 24px rgba(255,216,107,0.5),
+        0 0 40px rgba(255,78,205,0.3),
+        0 0 54px rgba(0,255,247,0.12);
+      animation: holoTitleShift 3.8s ease-in-out infinite;
+    }
+
+    .tier-price {
+      flex: 0 0 auto;
+      padding: 0.42rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid var(--tier-accent, rgba(255,216,107,0.34));
+      background: linear-gradient(145deg, rgba(255,216,107,0.12), rgba(255,78,205,0.08), rgba(0,255,247,0.06));
+      color: #fffbe6;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow:
+        inset 0 0 12px rgba(255,216,107,0.14),
+        0 0 16px rgba(255,216,107,0.16),
+        0 0 22px rgba(255,78,205,0.08);
+      white-space: nowrap;
+    }
+
+    .vip-tier ul {
+      list-style: none;
+      margin: 0.1rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.65rem;
+      flex: 1 1 auto;
+    }
+
+    .vip-tier li {
+      position: relative;
+      padding-left: 1.15rem;
+      color: rgba(246, 252, 255, 0.97);
+      line-height: 1.45;
+      font-size: 0.96rem;
+    }
+
+    .vip-tier li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--tier-accent, var(--vip-cyan));
+      box-shadow: 0 0 12px rgba(0,255,247,0.8), 0 0 18px rgba(255,216,107,0.18);
+    }
+
+    .vip-tier li strong {
+      color: #fff6d6;
+    }
+
+    .vip-tier .tier-note {
+      display: block;
+      margin-top: 0.55rem;
+      color: rgba(220, 243, 255, 0.82);
+      font-size: 0.78rem;
+      line-height: 1.45;
+    }
+
+    @media (min-width: 1200px) {
+      .vip-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .vip-roster {
+      grid-column: 1 / -1;
+      margin-top: 0.15rem;
+      padding: 1.3rem 1.2rem 1.25rem;
+      border-color: rgba(255, 216, 107, 0.3);
+    }
+
+    .vip-roster h3 {
+      margin: 0.2rem 0 0;
+      color: transparent;
+      background: linear-gradient(100deg, #fff, #fff8d8, #ffd86b, #ff9ee2, #b8fbff, #fff);
+      background-size: 320% 320%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: holoTitleShift 3.8s ease-in-out infinite;
+    }
+
+    .vip-roster ul {
+      list-style: none;
+      margin: 1rem 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .vip-roster li {
+      padding: 0.7rem 0.85rem;
+      border: 1px solid rgba(255, 216, 107, 0.2);
+      border-radius: 0.7rem;
+      background: linear-gradient(145deg, rgba(1, 8, 20, 0.78), rgba(9, 18, 34, 0.86));
+      color: #f7fbff;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-align: center;
+      box-shadow:
+        inset 0 0 14px rgba(255,216,107,0.07),
+        0 0 14px rgba(0,255,247,0.04);
+      text-shadow: 0 0 12px rgba(0,255,247,0.12), 0 0 20px rgba(255,78,205,0.08);
+    }
+
+    .vip-name {
+      display: inline-block;
+      color: transparent;
+      background: linear-gradient(135deg, #ffffff 0%, #8efcff 20%, #ffd86b 48%, #ff7cda 74%, #ffffff 100%);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      text-shadow: 0 0 10px rgba(0,255,247,0.18), 0 0 20px rgba(255,78,205,0.1);
+      animation: holoTitleShift 4.8s ease-in-out infinite;
+    }
+
+    @keyframes holoTitleShift {
+      0%, 100% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 5px rgba(255,255,255,0.16)) hue-rotate(0deg) saturate(1.12);
+      }
+      42% {
+        background-position: 72% 50%;
+        filter: drop-shadow(0 0 8px rgba(255,78,205,0.2)) hue-rotate(35deg) saturate(1.35);
+      }
+      68% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 8px rgba(0,255,247,0.2)) hue-rotate(-28deg) saturate(1.32);
+      }
+    }
+
+    @keyframes vipSweep {
+      0%, 28% { transform: translateX(0) skewX(-18deg); opacity: 0; }
+      40% { opacity: 0.72; }
+      62%, 100% { transform: translateX(520%) skewX(-18deg); opacity: 0; }
+    }
+
+    @media (max-width: 900px) {
+      .vip-shell {
+        width: min(96vw, 860px);
+        padding: 1.3rem 0.85rem 1.55rem;
+      }
+
+      .vip-hero h1 {
+        letter-spacing: 0.12em;
+      }
+
+      .tier-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .tier-price {
+        align-self: flex-start;
+      }
+
+      .vip-tier.featured {
+        grid-column: auto;
+      }
+
+      .vip-roster ul {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      }
+    }
   </style>
 </head>
 <body>
   <div class="nav-wrapper">
     <nav id="main-nav" class="visible">
-      <a href="../index.html#home">Home</a>
-      <a href="../info.html">Venue Details</a>
-      <a href="../staff.html">Team & Services</a>
-      <a href="../index.html#menu">Menu</a>
-      <a href="vip.html" class="active">💎 VIP Packages</a>
-      <a href="../index.html#apply">Apply Now!</a>
-  </nav>
+      <a href="../index.html#home"><span>Home</span><i class="screen-sweep"></i></a>
+      <a href="../info.html"><span>Venue Details</span><i class="screen-sweep"></i></a>
+      <a href="../index.html#menu"><span>Menu</span><i class="screen-sweep"></i></a>
+      <a href="../staff.html#staff"><span>Team & Services</span><i class="screen-sweep"></i></a>
+      <a href="vip.html" class="active"><span>VIP Packages</span><i class="screen-sweep"></i></a>
+    </nav>
   </div>
 
-  <section class="vip-section">
-    <h2>💎 VIP Packages</h2>
-    <p>Each tier grants access to all perks of the lower tiers. The higher you go, the more exclusive the experience.</p>
+  <main class="vip-shell">
+    <section class="vip-hero">
+      <div class="vip-kicker">Neon Neko Access Matrix</div>
+      <h1>VIP Packages</h1>
+      <p>Each purchase of a higher tier grants access to every perk in the tiers that came before it. The higher the tier, the more exclusive the access, the more rewards, and the more status.</p>
+      <div class="vip-callout">Premium access line active</div>
+      <div class="vip-contact">For VIP purchases contact Yishi Lalni</div>
+    </section>
 
-    <div class="vip-card">
-      <h3>🌙 Nightly VIP – 200k</h3>
-      <ul>
-        <li>Access to VIP area</li>
-        <li>5 free shots from the bar</li>
+    <section class="vip-grid" aria-label="VIP tiers">
+      <article class="vip-tier" style="--tier-accent:#8efcff;">
+        <div class="tier-head">
+          <div>
+            <span class="tier-label">Nightly VIP</span>
+            <h2>200k</h2>
+          </div>
+          <span class="tier-price">Entry Tier</span>
+        </div>
+        <ul>
+          <li>Access to VIP area</li>
+          <li>5 free shots from the bar</li>
+        </ul>
+      </article>
+
+      <article class="vip-tier" style="--tier-accent:#ff7cda;">
+        <div class="tier-head">
+          <div>
+            <span class="tier-label">Monthly / Discord Boost</span>
+            <h2>2M</h2>
+          </div>
+          <span class="tier-price">Support Tier</span>
+        </div>
+        <ul>
+          <li>Access to VIP area +1 guest</li>
+          <li>Max bet at gamba table of <strong>2M</strong></li>
+          <li>Discord VIP role</li>
+          <li>5% discount on raffle ticket purchases</li>
+          <li>Free gpose once per month if a photographer is available</li>
+          <li>1 free bingo card</li>
+        </ul>
+      </article>
+
+      <article class="vip-tier" style="--tier-accent:#ffd86b;">
+        <div class="tier-head">
+          <div>
+            <span class="tier-label">Yearly VIP</span>
+            <h2>24M</h2>
+          </div>
+          <span class="tier-price">Priority Tier</span>
+        </div>
+        <ul>
+          <li>Access to VIP area +3 guests</li>
+          <li>Max bet at gamba table of <strong>2mil</strong></li>
+          <li>Priority waitlist for gamba if there is one</li>
+          <li>Free gpose once per opening if a photographer is available, up to 3 per month</li>
+          <li>2 free bingo cards</li>
+          <li>10% discount on all raffle ticket purchases</li>
+        </ul>
+      </article>
+
+      <article class="vip-tier featured" style="--tier-accent:#ffd86b;">
+        <div class="tier-head">
+          <div>
+            <span class="tier-label">Lifetime VIP</span>
+            <h2>50M</h2>
+          </div>
+          <span class="tier-price">Top Tier</span>
+        </div>
+        <ul>
+          <li>Access to VIP area with up to 5 guests</li>
+          <li>Free drinks from the bar</li>
+          <li>Max bet at gamba table of <strong>3mil</strong></li>
+          <li>Free gpose once per opening if a photographer is available, up to 4 per month</li>
+          <li>Photobooth priority once per opening</li>
+          <li>Mentioned on the carrd as a contributor to Neon Neko</li>
+          <li>20% discount on all raffle ticket purchases</li>
+          <li>3 free bingo cards</li>
+          <li>Appear on our weekly flyer for venue announcements</li>
+        </ul>
+        <span class="tier-note">This tier includes every perk from Nightly, Monthly, and Yearly VIP.</span>
+      </article>
+    </section>
+
+    <section class="vip-roster" id="vip-contributors" aria-label="Lifetime VIP contributors">
+      <div class="vip-kicker">Contributor Registry</div>
+      <h3>Lifetime VIP People</h3>
+      <ul id="contributorList">
+        <li>Loading...</li>
       </ul>
-    </div>
+    </section>
+  </main>
 
-    <div class="vip-card">
-      <h3>📅 Monthly VIP – 2M</h3>
-      <ul>
-        <li>Everything in Nightly VIP</li>
-        <li>Access to VIP area +1 guest</li>
-        <li>Max bet at gamba table: <strong>2M</strong></li>
-        <li>Discord VIP role</li>
-        <li>1 free GPOSER shoot per month <small>(if available)</small></li>
-      </ul>
-    </div>
-
-    <div class="vip-card">
-      <h3>📆 Yearly VIP – 24M</h3>
-      <ul>
-        <li>Everything in Monthly VIP</li>
-        <li>Access to VIP area +3 guests</li>
-        <li>Priority gamba waitlist</li>
-        <li>1 GPOSER shoot per opening <small>(if available)</small></li>
-        <li>30 min free with a Court per month <small>(Court opt-in)</small></li>
-        <li>10% discount on all raffle tickets</li>
-      </ul>
-    </div>
-
-    <div class="vip-card">
-      <h3>👑 Lifetime VIP – 50M</h3>
-      <ul>
-        <li>Everything in Yearly VIP</li>
-        <li>Access to VIP area +5 guests</li>
-        <li>Free drinks from the bar</li>
-        <li>Max bet at gamba table: <strong>3M</strong></li>
-        <li>Photobooth priority each opening</li>
-        <li>1 hour free with a Court per month <small>(Court opt-in)</small></li>
-        <li>Your name listed on the Carrd as a contributor</li>
-        <li>20% discount on all raffle tickets</li>
-        <li>Early signups for raffles & DR Tournaments</li>
-      </ul>
-    </div>
-    <div class="vip-card" id="vip-contributors">
-  <h3>🎉 Lifetime VIP Contributors</h3>
-  <ul id="contributorList">
-    <li>Loading...</li>
-  </ul>
-</div>
-</section>
-<script src="vip.js"></script>
-</script>
-
-  <canvas id="neonCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9999;"></canvas>
-
-<style>
-  body, html {
-    cursor: none !important;
-  }
-</style>
-<script>
-  
-const canvas = document.getElementById("neonCanvas");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  let trail = [];
-  const maxTrail = 20;
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    trail.push({ x: mouse.x, y: mouse.y });
-    if (trail.length > maxTrail) trail.shift();
-
-    ctx.beginPath();
-    for (let i = 0; i < trail.length - 1; i++) {
-      const p1 = trail[i];
-      const p2 = trail[i + 1];
-      ctx.moveTo(p1.x, p1.y);
-      ctx.lineTo(p2.x, p2.y);
-    }
-
-    /* Use a rich gold colour for the cursor trail */
-    ctx.strokeStyle = "rgba(255, 215, 0, 0.8)";
-    ctx.lineWidth = 3;
-    ctx.lineJoin = "round";
-    ctx.lineCap = "round";
-    ctx.shadowColor = "rgba(255, 215, 0, 1)";
-    ctx.shadowBlur = 15;
-    ctx.stroke();
-
-    requestAnimationFrame(draw);
-  }
-    document.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-  draw();
-</script>
+  <script src="vip.js"></script>
 </body>
 </html>
