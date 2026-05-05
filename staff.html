@@ -114,7 +114,7 @@
     radial-gradient(circle at 82% 18%, rgba(0,255,247,0.76) 0 1px, transparent 1.4px),
     radial-gradient(circle at 58% 76%, rgba(255,78,205,0.62) 0 1px, transparent 1.4px),
     linear-gradient(180deg, #02030a 0%, #080817 54%, #03040c 100%);
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: #EAEAEA;
   width: 100%;
   min-height: 100vh;
@@ -937,6 +937,7 @@ fetch('staff.json')
     const STAFF_STATE_KEY = 'neon-neko-staff-active-index';
     let activeStaffIndex = 0;
     let panelCycleTimer = null;
+    let profilePanelOpen = false;
 
     function getInitialStaffIndex(length) {
       const saved = Number.parseInt(window.sessionStorage.getItem(STAFF_STATE_KEY) ?? '', 10);
@@ -1021,37 +1022,27 @@ fetch('staff.json')
     }
 
     function openProfilePanel() {
+      if (profilePanelOpen) return;
+      profilePanelOpen = true;
       updateProfilePanel();
-      document.body.appendChild(profilePanel);
       profilePanel.classList.add('is-open');
       profilePanel.setAttribute('aria-hidden', 'false');
-      Object.assign(profilePanel.style, {
-        display: 'block',
-        opacity: '1',
-        pointerEvents: 'auto',
-        position: 'fixed',
-        left: '50%',
-        top: '54%',
-        transform: 'translate(-50%, -50%) scale(1)',
-        zIndex: '100000'
-      });
+      document.body.classList.add('staff-profile-open');
     }
 
     function closeProfilePanel() {
+      profilePanelOpen = false;
       profilePanel.classList.remove('is-open');
       profilePanel.setAttribute('aria-hidden', 'true');
-      profilePanel.style.opacity = '';
-      profilePanel.style.pointerEvents = '';
-      profilePanel.style.transform = '';
+      document.body.classList.remove('staff-profile-open');
     }
 
     function openStaffProfile(index) {
       if (activeStaffIndex !== index) {
         activeStaffIndex = index;
         renderHoloCarousel(Array.from(document.querySelectorAll('.card')));
-      } else {
-        updateProfilePanel();
       }
+      updateProfilePanel();
       persistStaffIndex();
       window.requestAnimationFrame(openProfilePanel);
     }
@@ -1093,7 +1084,8 @@ fetch('staff.json')
     function startPanelImageCycle() {
       if (panelCycleTimer) window.clearInterval(panelCycleTimer);
       panelCycleTimer = window.setInterval(() => {
-        document.querySelectorAll('.card').forEach(card => {
+        if (profilePanelOpen) return;
+        document.querySelectorAll('.card.carousel-active, .card.carousel-prev, .card.carousel-next').forEach(card => {
           const images = JSON.parse(card.dataset.images || '[]');
           if (images.length < 2) return;
 
@@ -1130,6 +1122,8 @@ fetch('staff.json')
       const img = document.createElement('img');
       img.src = images[0];
       img.alt = staff.name;
+      img.loading = 'lazy';
+      img.decoding = 'async';
       img.style.objectPosition = getPanelImagePosition(images[0], staff.name);
       picture.appendChild(img);
 
