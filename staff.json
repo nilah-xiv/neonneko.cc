@@ -24,10 +24,9 @@
         "role":  "General Manager",
         "desc":  "Yishi is a smart woman, but can often play the dumb blonde. She enjoys fighting and challenging herself, while also relaxing and having fun with much the same enthusiasm.  Yishi is naturally flirty, loves to dance, and can be quite hedonistic at times.  Given her demeanor, this woman typically takes charge with those who are less than sure of what they want.. but she does greatly enjoy people who know what they want out of life.",
         "image":  [
-                      "images/Yishi1.png",
-                      "images/Yishi2.png",
-                      "images/Yishi3.png",
-                      "images/Yishi4.png"
+                      "images/venue/Yishi1.png",
+                      "images/venue/Yishi2.png",
+                      "images/venue/Yishi3.png"
                   ]
     },
     {
@@ -53,11 +52,10 @@
     {
         "name":  "Solas Kurage",
         "role":  "Bartender",
-        "desc":  "The void of darkness \u0026 the taker of souls, some may even say hearts. Solas works at Neon Neko as the bartender, he may look pleasant to the eyes but don\u0027t let his devilish smile fool you. On some days he can be funny, and on others, you might find him lost in his own thoughts. Regardless of his mood, he sends an open invitation for conversation. If you feel like chatting",
+        "desc":  "Wanna get to know me? Tell me a little about your soul, and i'll let you glimpse the shadows of mine.",
         "image":  [
-                      "images/Solas.png",
-                      "images/Solas1.png",
-                      "images/Solas2.png"
+                      "images/venue/Solas1.png",
+                      "images/venue/Solas2.png"
                   ]
     },
     {
@@ -125,7 +123,7 @@
         "role":  "Dancer",
         "desc":  "She is the kitten with the cotton candy hair and a personality that\u0027s just as sweet, a free spirit who seeks out fun and new experiences in everything she does.  She is a playful kitten that loves to converse and is an avid lover of RP in all its forms.",
         "image":  [
-                      "images/Celeste1.png",
+                      "images/venue/CelesteChantra4.png",
                       "images/Celeste2.png",
                       "images/Celeste3.png",
                       "images/Celeste4.png"
@@ -209,6 +207,14 @@
         "desc":  "Just your local cowboy cat boyo who loves a good conversation. Will usually be spotted at any gamba table losing every bit of gil he\u0027s earned.",
         "image":  [
                       "images/Judas1.png"
+                  ]
+    },
+    {
+        "name":  "Rhea Rose",
+        "role":  "Ampurr",
+        "desc":  "Coming soon!",
+        "image":  [
+                      "images/venue/RheaRose.png"
                   ]
     }
 ]

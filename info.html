@@ -289,6 +289,59 @@
       text-shadow: 0 0 5px rgba(0,255,247,0.76);
     }
 
+    .venue-alert {
+      margin-top: 0.8rem;
+      padding: 0.55rem 0.8rem;
+      border: 1px solid rgba(255,78,205,0.48);
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg, rgba(255,78,205,0.16), rgba(0,255,247,0.08)),
+        rgba(10, 12, 29, 0.72);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 0 0 7px rgba(255,78,205,0.5);
+      box-shadow:
+        0 0 14px rgba(255,78,205,0.18),
+        0 0 18px rgba(0,255,247,0.1),
+        inset 0 0 16px rgba(255,255,255,0.04);
+    }
+
+    .price-callout {
+      margin-top: 0.85rem;
+      padding: 0.8rem 0.85rem;
+      border: 1px solid rgba(0,255,247,0.22);
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(0,255,247,0.08), rgba(255,78,205,0.07)),
+        rgba(8, 12, 24, 0.72);
+      box-shadow:
+        0 0 14px rgba(0,255,247,0.12),
+        inset 0 0 18px rgba(255,255,255,0.04);
+    }
+
+    .price-callout .price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      padding: 0.35rem 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .price-callout .price-row:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .price-callout .price-row strong {
+      color: #fff;
+    }
+
     .venue-shell {
       position: relative;
       z-index: 2;
@@ -872,6 +925,7 @@
           <span class="countdown-part"><span id="minutes">--</span>m</span>
           <span class="countdown-part"><span id="seconds">--</span>s</span>
         </div>
+        <div class="venue-alert">Neon Neko is closed this Saturday and will re-open on the 23rd.</div>
       </div>
 
       <div class="glow-box wide pink">
@@ -900,17 +954,26 @@
         <div class="data-pill-row">
           <span class="data-pill">DRT</span>
           <span class="data-pill pink">Bingo</span>
-          <span class="data-pill">50/50 Raffle</span>
+          <span class="data-pill">200 BOGO Tickets</span>
+        </div>
+        <div class="price-callout">
+          <div class="price-row"><span>Bingo Cards</span><strong>250k Each</strong></div>
+          <div class="price-row"><span>Raffle Tickets</span><strong>100k Each</strong></div>
+          <div class="price-row"><span>BOGO Raffle Drop</span><strong>200 First Come, First Serve</strong></div>
         </div>
       </div>
 
       <div class="glow-box">
         <h2>Games & Gamba</h2>
-        <p>Bring your luck to the tables or grab a gamba drink from the bar before the next round starts.</p>
+        <p>Bring your luck to the tables, grab a gamba drink from the bar, or try your hand at Scratchers before the next round starts.</p>
         <div class="data-pill-row">
           <span class="data-pill">Blackjack</span>
           <span class="data-pill pink">Gamba Drinks</span>
-          <span class="data-pill">Games</span>
+          <span class="data-pill">Scratchers 200k</span>
+        </div>
+        <div class="price-callout">
+          <div class="price-row"><span>Scratchers</span><strong>200k</strong></div>
+          <div class="price-row"><span>Bingo Cards</span><strong>250k Each</strong></div>
         </div>
       </div>
 

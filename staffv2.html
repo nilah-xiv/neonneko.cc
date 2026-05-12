@@ -87,6 +87,32 @@
       color: var(--neon-blue);
       margin-bottom: 1rem;
     }
+    .staff-detail .meta-row {
+      display: none;
+      grid-template-columns: 90px 1fr;
+      gap: 0.5rem;
+      align-items: center;
+      margin: 0.75rem 0 0;
+      text-align: left;
+    }
+    .staff-detail .meta-row.active {
+      display: grid;
+    }
+    .staff-detail .meta-label {
+      color: var(--neon-pink);
+      font-weight: 700;
+    }
+    .staff-detail .meta-value {
+      color: #fff;
+      word-break: break-word;
+    }
+    .staff-detail .meta-value a {
+      color: var(--neon-blue);
+      text-decoration: none;
+    }
+    .staff-detail .meta-value a:hover {
+      text-decoration: underline;
+    }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(10px);}
       to {opacity: 1; transform: translateY(0);}
@@ -103,6 +129,10 @@
     <h2 id="detailName"></h2>
     <div class="role" id="detailRole"></div>
     <p id="detailDesc"></p>
+    <div class="meta-row" id="detailTwitchRow">
+      <span class="meta-label">Twitch</span>
+      <span class="meta-value"><a id="detailTwitchLink" href="#" target="_blank" rel="noopener noreferrer"></a></span>
+    </div>
   </div>
 
   <script>
@@ -114,6 +144,8 @@
         const nameEl = document.getElementById('detailName');
         const roleEl = document.getElementById('detailRole');
         const descEl = document.getElementById('detailDesc');
+        const twitchRow = document.getElementById('detailTwitchRow');
+        const twitchLink = document.getElementById('detailTwitchLink');
 
         function pickImage(src) {
           if (!src) return '';
@@ -121,19 +153,43 @@
           return src;
         }
 
+        function normalizeTwitch(url) {
+          if (!url) return '';
+          return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+        }
+
         staffList.forEach(staff => {
           const card = document.createElement('div');
           card.className = 'staff-card';
+          card.setAttribute('role', 'button');
+          card.setAttribute('tabindex', '0');
           card.innerHTML = `
             <img src="${pickImage(staff.image)}" alt="${staff.name}">
             <div class="staff-name">${staff.name}</div>
           `;
-          card.addEventListener('click', () => {
+          const openDetail = () => {
             nameEl.textContent = staff.name;
             roleEl.textContent = staff.role;
             descEl.textContent = staff.desc;
+            if (staff.twitch) {
+              const twitchHref = normalizeTwitch(staff.twitch);
+              twitchLink.href = twitchHref;
+              twitchLink.textContent = staff.twitch.replace(/^https?:\/\/(www\.)?/i, '');
+              twitchRow.classList.add('active');
+            } else {
+              twitchRow.classList.remove('active');
+              twitchLink.href = '#';
+              twitchLink.textContent = '';
+            }
             detail.classList.add('active');
             detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          };
+          card.addEventListener('click', openDetail);
+          card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openDetail();
+            }
           });
           grid.appendChild(card);
         });

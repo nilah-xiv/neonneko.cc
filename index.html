@@ -871,6 +871,35 @@ body.home-view .countdown-part {
   text-shadow: 0 0 7px rgba(255, 78, 205, 0.55);
 }
 
+.closure-notice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255,78,205,0.55);
+  border-radius: 999px;
+  background:
+    linear-gradient(135deg, rgba(255,78,205,0.16), rgba(0,255,247,0.08)),
+    rgba(10, 12, 29, 0.76);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(255,78,205,0.5);
+  box-shadow:
+    0 0 14px rgba(255,78,205,0.22),
+    0 0 18px rgba(0,255,247,0.12),
+    inset 0 0 18px rgba(255,255,255,0.05);
+}
+
+.closure-notice strong {
+  color: #ff9adf;
+  font-weight: 900;
+}
+
 body.home-view .subtext {
   position: absolute;
   width: 1px;
@@ -2700,6 +2729,7 @@ window.addEventListener("hashchange", checkForTeamHash);
     <span class="countdown-part"><span id="minutes">--</span>m</span>
     <span class="countdown-part"><span id="seconds">--</span>s</span>
   </div>
+  <div class="closure-notice">Neon Neko is <strong>closed this Saturday</strong> and will <strong>re-open on the 23rd</strong>.</div>
   <a class="board-button" href="info.html">BOARD NOW / 18+</a>
   <div class="flash-warning">Warning: launch sequence includes flashing neon lights</div>
   <div class="subtext">Glowing Wild, Purring Louder</div>
