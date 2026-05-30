@@ -2,7 +2,7 @@
     {
         "name":  "Kiera \"KiKi\" Virelle",
         "role":  "Owner",
-        "desc":  "Owner of Neon Neko and your favorite kind of trouble. Built for the wild onesâ€”the bass chasers and strobe light lovers.",
+        "desc":  "Owner of Neon Neko and your favorite kind of trouble. Built for the wild ones—the bass chasers and strobe light lovers.",
         "image":  [
                       "images/venue/KikiV1.png",
                       "images/Kiera2.png",
@@ -12,7 +12,7 @@
     {
         "name":  "Nilah Valoryn",
         "role":  "Owner",
-        "desc":  "Technomancer behind the scenes, Nilah makes the magic happenâ€”plugins, pixels, and purrs.",
+        "desc":  "Technomancer behind the scenes, Nilah makes the magic happen—plugins, pixels, and purrs.",
         "image":  [
                       "images/Nilah1.png",
                       "images/Nilah2.png",
@@ -32,7 +32,7 @@
     {
         "name":  "Shinobu Hagane",
         "role":  "GPOSER Manager",
-        "desc":  "Hair perfect, mood lethal. Shino captures glam like itâ€™s prey.",
+        "desc":  "Hair perfect, mood lethal. Shino captures glam like it's prey.",
         "image":  [
                       "images/venue/Shino3.png",
                       "images/venue/Shino1.png",
@@ -140,7 +140,7 @@
     {
         "name":  "Moxie Riot",
         "role":  "Dancer",
-        "desc":  "Sâ€™virexa is a smooth talking, nightlife loving wanderer with a taste for danger and a flair for charm. Known for her quick grin and quicker wit, she drifts from bar to bar, and club to club chasing music, mayhem, and the occasional bad decision that somehow always works out. Beneath the swagger, sheâ€™s got a sharp instinct for reading people and a loyalty that shows when it matters most. Whether sheâ€™s running a bar, spinning tracks, or stirring up trouble, â€œRexaâ€ leaves a spark in every room she walks into.",
+        "desc":  "S'virexa is a smooth talking, nightlife loving wanderer with a taste for danger and a flair for charm. Known for her quick grin and quicker wit, she drifts from bar to bar, and club to club chasing music, mayhem, and the occasional bad decision that somehow always works out. Beneath the swagger, she's got a sharp instinct for reading people and a loyalty that shows when it matters most. Whether she's running a bar, spinning tracks, or stirring up trouble, \"Rexa\" leaves a spark in every room she walks into.",
         "image":  [
                       "images/Vire1.png",
                       "images/Vire2.png",
@@ -150,7 +150,7 @@
     {
         "name":  "Sonja Golmarr",
         "role":  "GPOSER",
-        "desc":  "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But Iâ€™ve got an eye for quiet moments too.",
+        "desc":  "I live for the rush: savage raids, close calls, anything that pushes me to my limit. But I've got an eye for quiet moments too.",
         "image":  [
                       "images/Sonja.jpg",
                       "images/Sonja2.png",
